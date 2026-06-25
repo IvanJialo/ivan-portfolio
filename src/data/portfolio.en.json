@@ -1,0 +1,247 @@
+{
+  "profile": {
+    "name": "Iván Jiménez",
+    "role": "Junior Cybersecurity Analyst",
+    "tagline": "Network Security & Threat Detection",
+    "background": "Software Development Background",
+    "location": "Alicante, Spain",
+    "email": "ivanjimenezalonso09@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "status": "Available for cybersecurity roles",
+    "summary": "Junior Cybersecurity Analyst with a software development background and specialized training in cybersecurity. Interested in network security, threat detection, incident response, and offensive security."
+  },
+  "navigation": {
+    "startMission": "Start mission",
+    "downloadCv": "Download CV",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "ES",
+    "theme": "Terminal mode"
+  },
+  "statusPanel": {
+    "title": "System status",
+    "items": [
+      {
+        "label": "Status",
+        "value": "Available"
+      },
+      {
+        "label": "Location",
+        "value": "Alicante / Remote"
+      },
+      {
+        "label": "Focus",
+        "value": "Network Security"
+      },
+      {
+        "label": "Build",
+        "value": "Dev → Cyber"
+      },
+      {
+        "label": "Mode",
+        "value": "Learning / Applying"
+      }
+    ]
+  },
+  "securityFocus": {
+    "title": "Security focus",
+    "subtitle": "Areas I am building my cybersecurity profile around.",
+    "items": [
+      "Network Security",
+      "Threat Detection",
+      "Security Monitoring",
+      "Incident Response",
+      "Vulnerability Assessment",
+      "Digital Forensics",
+      "Web Application Security",
+      "Offensive Security Fundamentals"
+    ]
+  },
+  "toolset": {
+    "title": "Toolset / Inventory",
+    "subtitle": "Technologies and tools I have worked with through training, labs and software projects.",
+    "groups": [
+      {
+        "name": "Cybersecurity",
+        "items": [
+          "Wireshark",
+          "Burp Suite",
+          "Splunk",
+          "TheHive",
+          "Wazuh",
+          "Snort",
+          "Suricata",
+          "Volatility",
+          "Autopsy"
+        ]
+      },
+      {
+        "name": "Systems & Networks",
+        "items": ["Linux", "Windows", "TCP/IP", "DNS", "HTTP/HTTPS", "Basic Server Administration"]
+      },
+      {
+        "name": "Development",
+        "items": ["JavaScript", "Vue.js", "Tailwind CSS", "SQL", "C#", "ASP.NET", "Git"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Missions / Projects",
+    "subtitle": "Selected software and cybersecurity projects that represent my technical background.",
+    "items": [
+      {
+        "name": "WhatTheGame",
+        "type": "Web Application",
+        "status": "Completed",
+        "category": "Development",
+        "description": "Video game discovery web application built with Vue.js, Tailwind CSS, Firebase and external API integration.",
+        "technologies": ["Vue.js", "Tailwind CSS", "Firebase", "JavaScript", "API"],
+        "liveUrl": "https://what-the-game.vercel.app/"
+      },
+      {
+        "name": "TheHive, Cortex & MinIO Lab",
+        "type": "Cybersecurity Lab",
+        "status": "Completed",
+        "category": "Blue Team",
+        "description": "Deployment and integration of TheHive, Cortex and MinIO in a cloud environment for incident management and security analysis workflows.",
+        "technologies": ["TheHive", "Cortex", "MinIO", "AWS", "Linux", "Nginx"]
+      },
+      {
+        "name": "Network Security Monitoring Lab",
+        "type": "Cybersecurity Lab",
+        "status": "Completed",
+        "category": "Detection",
+        "description": "Security monitoring lab using tools such as Splunk, Suricata, Snort and Wazuh to analyze alerts, logs and network activity.",
+        "technologies": ["Splunk", "Suricata", "Snort", "Wazuh", "Linux"]
+      },
+      {
+        "name": "Digital Forensics Reports",
+        "type": "Cybersecurity Practice",
+        "status": "Completed",
+        "category": "Forensics",
+        "description": "Forensic analysis exercises involving network captures, system evidence, malicious emails and structured technical reporting.",
+        "technologies": ["Wireshark", "Autopsy", "Volatility", "Linux", "Reporting"]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience log",
+    "subtitle": "Professional experience across software development, technical support and systems.",
+    "items": [
+      {
+        "company": "QuixMind",
+        "role": "Software Developer",
+        "period": "Mar 2026 - Present",
+        "location": "Alicante, Spain",
+        "type": "Part-time",
+        "description": [
+          "Contribute to software development, version maintenance and testing for industrial autonomous vehicle and inventory control systems.",
+          "Support technical troubleshooting, configuration management and validation of internal tools and workflows."
+        ],
+        "tags": ["Software Development", "Testing", "Configuration", "Industrial Systems"]
+      },
+      {
+        "company": "Axon Time",
+        "role": "Software Developer Intern",
+        "period": "Mar 2025 - Jun 2025",
+        "location": "Alicante, Spain",
+        "type": "Internship",
+        "description": [
+          "Developed and improved features for an internal ERP system using C# and ASP.NET.",
+          "Worked with MySQL databases, Git and support-related automation in a collaborative development environment."
+        ],
+        "tags": ["C#", "ASP.NET", "MySQL", "Git"]
+      },
+      {
+        "company": "MediaMarkt Service",
+        "role": "Computer & Mobile Device Repair Technician Apprentice",
+        "period": "Oct 2021 - May 2022",
+        "location": "Alicante, Spain",
+        "type": "Apprenticeship",
+        "description": [
+          "Diagnosed and repaired computers and mobile devices, including hardware replacement and functionality testing.",
+          "Analyzed technical failures in a high-volume service environment."
+        ],
+        "tags": ["Hardware", "Troubleshooting", "Technical Support", "Repair"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education records",
+    "subtitle": "Formal training in cybersecurity, software development and computer systems.",
+    "items": [
+      {
+        "title": "Cybersecurity Specialization Course in IT Environments",
+        "school": "IES San Vicente",
+        "period": "Sep 2025 - Jun 2026",
+        "category": "Cybersecurity",
+        "description": "Specialized training focused on cybersecurity fundamentals, network security, system hardening, incident response, digital forensics, vulnerability analysis and security monitoring.",
+        "tags": ["Cybersecurity", "Network Security", "Incident Response", "Digital Forensics"]
+      },
+      {
+        "title": "Higher Technician in Multi-Platform Application Development",
+        "school": "IES El Pla",
+        "period": "Sep 2023 - Jun 2025",
+        "category": "Software Development",
+        "description": "Higher vocational training focused on software development, object-oriented programming, databases, web development, application design and version control.",
+        "tags": ["Software Development", "Databases", "Web Development", "Git"]
+      },
+      {
+        "title": "Technician in Microcomputer Systems and Networks",
+        "school": "IES San Vicente",
+        "period": "Sep 2020 - Jun 2022",
+        "category": "Systems & Networks",
+        "description": "Vocational training focused on computer systems, networks, hardware maintenance, operating systems, basic server administration and technical support.",
+        "tags": ["Systems", "Networks", "Hardware", "Technical Support"]
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "subtitle": "Communication skills for international and technical environments.",
+    "items": [
+      {
+        "name": "Spanish",
+        "level": "Native",
+        "progress": 100
+      },
+      {
+        "name": "English",
+        "level": "B2",
+        "progress": 75
+      },
+      {
+        "name": "Valencian / Catalan",
+        "level": "Advanced",
+        "progress": 85
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications roadmap",
+    "subtitle": "Certifications and learning goals planned to strengthen my cybersecurity profile.",
+    "items": [
+      {
+        "name": "CompTIA Security+",
+        "issuer": "CompTIA",
+        "status": "Planned",
+        "description": "General cybersecurity certification covering security fundamentals, threats, risk management, architecture and operations.",
+        "tags": ["Security Fundamentals", "Risk", "Threats"]
+      },
+      {
+        "name": "Cisco CCNA",
+        "issuer": "Cisco",
+        "status": "Future Goal",
+        "description": "Networking certification focused on routing, switching, IP services, security fundamentals and network troubleshooting.",
+        "tags": ["Networking", "TCP/IP", "Routing"]
+      },
+      {
+        "name": "Blue Team / SOC Training",
+        "issuer": "Practical Labs",
+        "status": "In Progress",
+        "description": "Hands-on learning focused on SIEM analysis, alert triage, incident response, threat detection and endpoint security.",
+        "tags": ["SOC", "SIEM", "Incident Response"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "profile": {
+    "name": "Iván Jiménez",
+    "role": "Analista Junior de Ciberseguridad",
+    "tagline": "Seguridad de Redes y Detección de Amenazas",
+    "background": "Base en Desarrollo de Software",
+    "location": "Alicante, España",
+    "email": "ivanjimenezalonso09@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "status": "Disponible para puestos de ciberseguridad",
+    "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Interesado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
+  },
+  "navigation": {
+    "startMission": "Iniciar misión",
+    "downloadCv": "Descargar CV",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "language": "EN",
+    "theme": "Modo terminal"
+  },
+  "statusPanel": {
+    "title": "Estado del sistema",
+    "items": [
+      {
+        "label": "Estado",
+        "value": "Disponible"
+      },
+      {
+        "label": "Ubicación",
+        "value": "Alicante / Remoto"
+      },
+      {
+        "label": "Enfoque",
+        "value": "Seguridad de redes"
+      },
+      {
+        "label": "Perfil",
+        "value": "Dev → Ciber"
+      },
+      {
+        "label": "Modo",
+        "value": "Aprendiendo / Aplicando"
+      }
+    ]
+  },
+  "securityFocus": {
+    "title": "Enfoque en ciberseguridad",
+    "subtitle": "Áreas sobre las que estoy construyendo mi perfil en ciberseguridad.",
+    "items": [
+      "Seguridad de redes",
+      "Detección de amenazas",
+      "Monitorización de seguridad",
+      "Respuesta ante incidentes",
+      "Evaluación de vulnerabilidades",
+      "Análisis forense digital",
+      "Seguridad en aplicaciones web",
+      "Fundamentos de seguridad ofensiva"
+    ]
+  },
+  "toolset": {
+    "title": "Herramientas / Inventario",
+    "subtitle": "Tecnologías y herramientas utilizadas durante mi formación, laboratorios y proyectos de software.",
+    "groups": [
+      {
+        "name": "Ciberseguridad",
+        "items": [
+          "Wireshark",
+          "Burp Suite",
+          "Splunk",
+          "TheHive",
+          "Wazuh",
+          "Snort",
+          "Suricata",
+          "Volatility",
+          "Autopsy"
+        ]
+      },
+      {
+        "name": "Sistemas y redes",
+        "items": [
+          "Linux",
+          "Windows",
+          "TCP/IP",
+          "DNS",
+          "HTTP/HTTPS",
+          "Administración básica de servidores"
+        ]
+      },
+      {
+        "name": "Desarrollo",
+        "items": ["JavaScript", "Vue.js", "Tailwind CSS", "SQL", "C#", "ASP.NET", "Git"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Misiones / Proyectos",
+    "subtitle": "Proyectos de software y ciberseguridad que representan mi perfil técnico.",
+    "items": [
+      {
+        "name": "WhatTheGame",
+        "type": "Aplicación web",
+        "status": "Completado",
+        "category": "Desarrollo",
+        "description": "Aplicación web de descubrimiento de videojuegos desarrollada con Vue.js, Tailwind CSS, Firebase e integración con API externa.",
+        "technologies": ["Vue.js", "Tailwind CSS", "Firebase", "JavaScript", "API"],
+        "liveUrl": "https://what-the-game.vercel.app/"
+      },
+      {
+        "name": "Laboratorio TheHive, Cortex y MinIO",
+        "type": "Laboratorio de ciberseguridad",
+        "status": "Completado",
+        "category": "Blue Team",
+        "description": "Despliegue e integración de TheHive, Cortex y MinIO en un entorno cloud para gestión de incidentes y flujos de análisis de seguridad.",
+        "technologies": ["TheHive", "Cortex", "MinIO", "AWS", "Linux", "Nginx"]
+      },
+      {
+        "name": "Laboratorio de Monitorización de Seguridad",
+        "type": "Laboratorio de ciberseguridad",
+        "status": "Completado",
+        "category": "Detección",
+        "description": "Laboratorio de monitorización de seguridad utilizando Splunk, Suricata, Snort y Wazuh para analizar alertas, logs y actividad de red.",
+        "technologies": ["Splunk", "Suricata", "Snort", "Wazuh", "Linux"]
+      },
+      {
+        "name": "Informes de Análisis Forense Digital",
+        "type": "Práctica de ciberseguridad",
+        "status": "Completado",
+        "category": "Forense",
+        "description": "Ejercicios de análisis forense sobre capturas de red, evidencias de sistema, correos maliciosos y redacción técnica estructurada.",
+        "technologies": ["Wireshark", "Autopsy", "Volatility", "Linux", "Reporting"]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Registro de experiencia",
+    "subtitle": "Experiencia profesional en desarrollo de software, soporte técnico y sistemas.",
+    "items": [
+      {
+        "company": "QuixMind",
+        "role": "Desarrollador de Software",
+        "period": "Mar 2026 - Presente",
+        "location": "Alicante, España",
+        "type": "Media jornada",
+        "description": [
+          "Desarrollo de software, mantenimiento de versiones y pruebas para sistemas industriales de vehículos autónomos y control de inventario.",
+          "Soporte en resolución de incidencias técnicas, gestión de configuración y validación de herramientas y flujos de trabajo internos."
+        ],
+        "tags": ["Desarrollo de Software", "Pruebas", "Configuración", "Sistemas Industriales"]
+      },
+      {
+        "company": "Axon Time",
+        "role": "Desarrollador de Software en Prácticas",
+        "period": "Mar 2025 - Jun 2025",
+        "location": "Alicante, España",
+        "type": "Prácticas",
+        "description": [
+          "Desarrollo y mejora de funcionalidades para un ERP interno utilizando C# y ASP.NET.",
+          "Trabajo con bases de datos MySQL, Git y automatización relacionada con soporte en un entorno colaborativo de desarrollo."
+        ],
+        "tags": ["C#", "ASP.NET", "MySQL", "Git"]
+      },
+      {
+        "company": "MediaMarkt Service",
+        "role": "Técnico en Reparación de Equipos Informáticos y Móviles",
+        "period": "Oct 2021 - May 2022",
+        "location": "Alicante, España",
+        "type": "FP Dual",
+        "description": [
+          "Diagnóstico y reparación de ordenadores y dispositivos móviles, incluyendo sustitución de componentes y pruebas de funcionamiento.",
+          "Análisis de fallos técnicos en un entorno de servicio con alta carga operativa."
+        ],
+        "tags": ["Hardware", "Resolución de Incidencias", "Soporte Técnico", "Reparación"]
+      }
+    ]
+  },
+  "education": {
+    "title": "Formación",
+    "subtitle": "Formación oficial en ciberseguridad, desarrollo de software y sistemas informáticos.",
+    "items": [
+      {
+        "title": "Curso de Especialización en Ciberseguridad en Entornos de IT",
+        "school": "IES San Vicente",
+        "period": "Sep 2025 - Jun 2026",
+        "category": "Ciberseguridad",
+        "description": "Formación especializada en fundamentos de ciberseguridad, seguridad de redes, hardening de sistemas, respuesta ante incidentes, análisis forense digital, análisis de vulnerabilidades y monitorización de seguridad.",
+        "tags": [
+          "Ciberseguridad",
+          "Seguridad de Redes",
+          "Respuesta ante Incidentes",
+          "Análisis Forense"
+        ]
+      },
+      {
+        "title": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
+        "school": "IES El Pla",
+        "period": "Sep 2023 - Jun 2025",
+        "category": "Desarrollo de Software",
+        "description": "Formación de grado superior centrada en desarrollo de software, programación orientada a objetos, bases de datos, desarrollo web, diseño de aplicaciones y control de versiones.",
+        "tags": ["Desarrollo de Software", "Bases de Datos", "Desarrollo Web", "Git"]
+      },
+      {
+        "title": "Técnico en Sistemas Microinformáticos y Redes",
+        "school": "IES San Vicente",
+        "period": "Sep 2020 - Jun 2022",
+        "category": "Sistemas y Redes",
+        "description": "Formación centrada en sistemas informáticos, redes, mantenimiento de hardware, sistemas operativos, administración básica de servidores y soporte técnico.",
+        "tags": ["Sistemas", "Redes", "Hardware", "Soporte Técnico"]
+      }
+    ]
+  },
+  "languages": {
+    "title": "Idiomas",
+    "subtitle": "Competencias comunicativas para entornos técnicos e internacionales.",
+    "items": [
+      {
+        "name": "Español",
+        "level": "Nativo",
+        "progress": 100
+      },
+      {
+        "name": "Inglés",
+        "level": "B2",
+        "progress": 75
+      },
+      {
+        "name": "Valenciano / Catalán",
+        "level": "Avanzado",
+        "progress": 85
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Roadmap de certificaciones",
+    "subtitle": "Certificaciones y objetivos de aprendizaje planificados para reforzar mi perfil en ciberseguridad.",
+    "items": [
+      {
+        "name": "CompTIA Security+",
+        "issuer": "CompTIA",
+        "status": "Planificada",
+        "description": "Certificación general de ciberseguridad centrada en fundamentos de seguridad, amenazas, gestión de riesgos, arquitectura y operaciones.",
+        "tags": ["Fundamentos de Seguridad", "Riesgo", "Amenazas"]
+      },
+      {
+        "name": "Cisco CCNA",
+        "issuer": "Cisco",
+        "status": "Objetivo Futuro",
+        "description": "Certificación de redes centrada en routing, switching, servicios IP, fundamentos de seguridad y resolución de problemas de red.",
+        "tags": ["Redes", "TCP/IP", "Routing"]
+      },
+      {
+        "name": "Formación Blue Team / SOC",
+        "issuer": "Laboratorios prácticos",
+        "status": "En Progreso",
+        "description": "Aprendizaje práctico centrado en análisis SIEM, triaje de alertas, respuesta ante incidentes, detección de amenazas y seguridad endpoint.",
+        "tags": ["SOC", "SIEM", "Respuesta ante Incidentes"]
+      }
+    ]
+  }
+}
