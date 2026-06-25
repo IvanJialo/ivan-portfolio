@@ -255,5 +255,26 @@
         "tags": ["SOC", "SIEM", "Respuesta ante Incidentes"]
       }
     ]
+  },
+  "contact": {
+    "title": "¿Hablamos?",
+    "subtitle": "Disponible para puestos junior de ciberseguridad, SOC analyst, monitorización de seguridad, detección de amenazas y oportunidades de soporte técnico.",
+    "email": "ivanjimenezalonso09@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "actions": {
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "cvEnglish": "Descargar CV EN",
+      "cvSpanish": "Descargar CV ES"
+    },
+    "cv": {
+      "english": "cv/IvanJimenezAlonsoEN.pdf",
+      "spanish": "cv/IvanJimenezAlonsoES.pdf"
+    }
+  },
+  "footer": {
+    "builtWith": "Desarrollado con Vue.js, Tailwind CSS y demasiado café.",
+    "mode": "Portfolio NeoBrutalist / Terminal",
+    "copyright": "© 2026 Iván Jiménez. Todos los derechos reservados."
   }
 }

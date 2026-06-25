@@ -15,7 +15,7 @@ defineProps({
 })
 
 const baseClasses =
-  'border-4 px-6 py-3 font-black uppercase shadow-[4px_4px_0_#000] transition active:translate-x-1 active:translate-y-1 active:shadow-none'
+  'border-4 px-6 py-3 font-black uppercase shadow-[4px_4px_0_#000] transition active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer'
 
 const variantClasses = {
   primary: {

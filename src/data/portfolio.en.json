@@ -243,5 +243,26 @@
         "tags": ["SOC", "SIEM", "Incident Response"]
       }
     ]
+  },
+  "contact": {
+    "title": "Ready to connect?",
+    "subtitle": "Open to junior cybersecurity roles, SOC analyst positions, security monitoring, threat detection and technical support opportunities.",
+    "email": "ivanjimenezalonso09@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "actions": {
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "cvEnglish": "Download CV EN",
+      "cvSpanish": "Download CV ES"
+    },
+    "cv": {
+      "english": "cv/IvanJimenezAlonsoEN.pdf",
+      "spanish": "cv/IvanJimenezAlonsoES.pdf"
+    }
+  },
+  "footer": {
+    "builtWith": "Built with Vue.js, Tailwind CSS and too much caffeine.",
+    "mode": "NeoBrutalist / Terminal portfolio",
+    "copyright": "© 2026 Iván Jiménez. All rights reserved."
   }
 }

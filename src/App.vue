@@ -9,6 +9,8 @@ import ExperienceLog from './components/ExperienceLog.vue'
 import EducationSection from './components/EducationSection.vue'
 import LanguagesSection from './components/LanguagesSection.vue'
 import CertificationsSection from './components/CertificationsSection.vue'
+import ContactSection from './components/ContactSection.vue'
+import FooterSection from './components/FooterSection.vue'
 import portfolioEn from './data/portfolio.en.json'
 import portfolioEs from './data/portfolio.es.json'
 
@@ -59,7 +61,7 @@ const toggleTheme = () => {
 
         <div class="flex flex-wrap justify-end gap-3">
           <button
-            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none"
+            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer"
             :class="
               isTerminal
                 ? 'border-[#00d9ff] bg-[#ff2e88] text-white'
@@ -72,7 +74,7 @@ const toggleTheme = () => {
           </button>
 
           <button
-            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none"
+            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer"
             :class="
               isTerminal
                 ? 'border-[#b6ff00] bg-[#080f12] text-[#b6ff00]'
@@ -101,6 +103,10 @@ const toggleTheme = () => {
       <LanguagesSection :section="portfolio.languages" :is-terminal="isTerminal" />
 
       <CertificationsSection :section="portfolio.certifications" :is-terminal="isTerminal" />
+
+      <ContactSection :section="portfolio.contact" :is-terminal="isTerminal" />
+
+      <FooterSection :section="portfolio.footer" :is-terminal="isTerminal" />
     </section>
   </main>
 </template>
