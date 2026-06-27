@@ -7,39 +7,27 @@ defineProps({
     type: Object,
     required: true,
   },
-  isTerminal: {
-    type: Boolean,
-    default: false,
-  },
 })
 </script>
 
 <template>
   <section
-    class="mt-8 border-4 p-6 shadow-[8px_8px_0_#000]"
-    :class="isTerminal ? 'border-[#00d9ff] bg-[#080f12]' : 'border-black bg-white'"
+    class="mt-8 border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
-    <SectionTitle :title="section.title" :subtitle="section.subtitle" :is-terminal="isTerminal" />
+    <SectionTitle :title="section.title" :subtitle="section.subtitle" />
 
     <div class="relative mt-8 space-y-6">
       <div
-        class="absolute left-4 top-0 hidden h-full w-1 border-l-4 md:block"
-        :class="isTerminal ? 'border-[#b6ff00]' : 'border-black'"
+        class="absolute left-4 top-0 hidden h-full w-1 border-l-4 border-[var(--border)] md:block"
       />
 
       <article
         v-for="(item, index) in section.items"
         :key="item.company"
-        class="relative border-4 p-5 shadow-[6px_6px_0_#000] md:ml-12"
-        :class="isTerminal ? 'border-[#b6ff00] bg-[#10191d]' : 'border-black bg-[#f5f1e8]'"
+        class="relative min-w-0 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] sm:p-5 sm:shadow-[6px_6px_0_var(--shadow),0_0_18px_var(--glow)] md:ml-12"
       >
         <div
-          class="absolute -left-[3.35rem] top-5 hidden h-10 w-10 items-center justify-center rounded-full border-4 text-sm font-black md:flex"
-          :class="
-            isTerminal
-              ? 'border-[#b6ff00] bg-[#ff2e88] text-white'
-              : 'border-black bg-[#00ff00] text-black'
-          "
+          class="absolute -left-[3.35rem] top-5 hidden h-10 w-10 items-center justify-center rounded-full border-4 border-[var(--border)] bg-[var(--accent)] text-sm font-black text-[var(--accent-text)] md:flex"
         >
           {{ index + 1 }}
         </div>
@@ -47,35 +35,22 @@ defineProps({
         <div class="mb-5 flex flex-col justify-between gap-4 lg:flex-row lg:items-start">
           <div>
             <p
-              class="mb-3 inline-block border-4 px-3 py-1 text-xs font-black uppercase shadow-[3px_3px_0_#000]"
-              :class="
-                isTerminal
-                  ? 'border-[#00d9ff] bg-black text-[#00d9ff]'
-                  : 'border-black bg-[#ffa500] text-black'
-              "
+              class="mb-3 inline-block border-4 border-[var(--border)] bg-[var(--accent-3)] px-3 py-1 text-xs font-black uppercase text-[var(--accent-3-text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)]"
             >
               {{ item.type }}
             </p>
 
-            <h3 class="text-2xl font-black uppercase">
+            <h3 class="break-words text-xl font-black uppercase sm:text-2xl">
               {{ item.role }}
             </h3>
 
-            <p
-              class="mt-1 text-lg font-black"
-              :class="isTerminal ? 'text-[#b6ff00]' : 'text-black'"
-            >
+            <p class="text-accent-outlined mt-1 text-lg font-black text-[var(--accent-readable)]">
               {{ item.company }}
             </p>
           </div>
 
           <div
-            class="border-4 px-4 py-3 text-sm font-black uppercase shadow-[4px_4px_0_#000]"
-            :class="
-              isTerminal
-                ? 'border-[#ff2e88] bg-[#080f12] text-[#ff2e88]'
-                : 'border-black bg-white text-black'
-            "
+            class="max-w-full break-words border-4 border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)]"
           >
             <p>{{ item.period }}</p>
             <p class="mt-1 opacity-70">{{ item.location }}</p>
@@ -89,15 +64,14 @@ defineProps({
             class="flex gap-3 font-semibold leading-relaxed"
           >
             <span
-              class="mt-2 h-3 w-3 shrink-0 border-2"
-              :class="isTerminal ? 'border-[#b6ff00] bg-[#b6ff00]' : 'border-black bg-[#ff00ff]'"
+              class="mt-2 h-3 w-3 shrink-0 border-2 border-[var(--border)] bg-[var(--accent-2)]"
             />
             <span>{{ point }}</span>
           </li>
         </ul>
 
         <div class="mt-5 flex flex-wrap gap-2">
-          <SkillBadge v-for="tag in item.tags" :key="tag" :is-terminal="isTerminal">
+          <SkillBadge v-for="tag in item.tags" :key="tag">
             {{ tag }}
           </SkillBadge>
         </div>

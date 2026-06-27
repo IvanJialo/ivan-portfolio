@@ -211,7 +211,7 @@
         "progress": 75
       },
       {
-        "name": "Valencian / Catalan",
+        "name": "Catalan",
         "level": "Advanced",
         "progress": 85
       }
@@ -262,7 +262,7 @@
   },
   "footer": {
     "builtWith": "Built with Vue.js, Tailwind CSS and too much caffeine.",
-    "mode": "NeoBrutalist / Terminal portfolio",
+    "mode": "NeoBrutalist / Neon / Dark portfolio",
     "copyright": "© 2026 Iván Jiménez. All rights reserved."
   }
 }

@@ -8,25 +8,15 @@ defineProps({
     type: Object,
     required: true,
   },
-  isTerminal: {
-    type: Boolean,
-    default: false,
-  },
 })
 </script>
 
 <template>
   <aside
-    class="border-4 p-5 shadow-[6px_6px_0_#000]"
-    :class="
-      isTerminal
-        ? 'border-[#b6ff00] bg-[#080f12] text-[#f5f1e8]'
-        : 'border-black bg-[#f5f1e8] text-black'
-    "
+    class="min-w-0 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 text-[var(--text)] shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] sm:p-5 sm:shadow-[6px_6px_0_var(--shadow),0_0_18px_var(--glow)]"
   >
     <div
-      class="mb-5 border-4 px-3 py-2 font-black uppercase"
-      :class="isTerminal ? 'border-[#00d9ff] bg-[#10191d] text-[#00d9ff]' : 'border-black bg-white'"
+      class="text-accent-outlined mb-5 break-words border-4 border-[var(--border)] bg-[var(--surface)] px-3 py-2 font-black uppercase text-[var(--accent-4-readable)]"
     >
       {{ panel.title }}
     </div>
@@ -35,24 +25,20 @@ defineProps({
       <div
         v-for="item in panel.items"
         :key="item.label"
-        class="grid grid-cols-[0.8fr_1fr] gap-3 border-2 p-3 text-sm font-black uppercase"
-        :class="isTerminal ? 'border-[#00d9ff]/70 bg-[#10191d]' : 'border-black bg-white'"
+        class="grid gap-2 border-2 border-[var(--border)] bg-[var(--surface)] p-3 text-sm font-black uppercase sm:grid-cols-[0.8fr_1fr] sm:gap-3"
       >
-        <span :class="isTerminal ? 'text-[#b6ff00]' : 'text-black/60'">
+        <span class="text-[var(--muted)]">
           {{ item.label }}
         </span>
 
-        <span>
+        <span class="break-words">
           {{ item.value }}
         </span>
       </div>
     </div>
 
     <div
-      class="mt-5 border-4 p-4 font-mono text-xs font-bold uppercase leading-relaxed"
-      :class="
-        isTerminal ? 'border-[#ff2e88] bg-black text-[#b6ff00]' : 'border-black bg-white text-black'
-      "
+      class="mt-5 break-words border-4 border-[var(--border)] bg-[var(--surface-strong)] p-4 font-mono text-xs font-bold uppercase leading-relaxed text-[var(--accent)]"
     >
       <p>&gt; whoami</p>
       <p>{{ profile.name }}</p>
