@@ -15,13 +15,29 @@ import portfolioEn from './data/portfolio.en.json'
 import portfolioEs from './data/portfolio.es.json'
 
 const language = ref(localStorage.getItem('language') || 'en')
-const theme = ref(localStorage.getItem('theme') || 'brutal')
+const themes = ['brutal', 'neon', 'dark']
+const savedTheme = localStorage.getItem('theme')
+const theme = ref(
+  themes.includes(savedTheme) ? savedTheme : savedTheme === 'terminal' ? 'neon' : 'brutal',
+)
 
 const portfolio = computed(() => {
   return language.value === 'en' ? portfolioEn : portfolioEs
 })
 
-const isTerminal = computed(() => theme.value === 'terminal')
+const modeLabel = computed(() => {
+  return theme.value.charAt(0).toUpperCase() + theme.value.slice(1)
+})
+
+const systemLabel = computed(() => {
+  const labels = {
+    brutal: 'NEO-BRUTALIST SYSTEM',
+    neon: 'NEON SECURITY DASHBOARD',
+    dark: 'DARK PROFESSIONAL MODE',
+  }
+
+  return labels[theme.value]
+})
 
 const toggleLanguage = () => {
   language.value = language.value === 'en' ? 'es' : 'en'
@@ -29,44 +45,40 @@ const toggleLanguage = () => {
 }
 
 const toggleTheme = () => {
-  theme.value = theme.value === 'brutal' ? 'terminal' : 'brutal'
+  const currentIndex = themes.indexOf(theme.value)
+  theme.value = themes[(currentIndex + 1) % themes.length]
   localStorage.setItem('theme', theme.value)
 }
 </script>
 
 <template>
   <main
-    class="min-h-screen p-4 font-sans transition-colors duration-300 md:p-8"
-    :class="isTerminal ? 'bg-[#080f12] text-[#f5f1e8]' : 'bg-[#f5f1e8] text-[#111111]'"
+    :data-theme="theme"
+    class="min-h-screen overflow-x-hidden bg-[var(--bg)] p-3 font-sans text-[var(--text)] transition-colors duration-300 sm:p-4 md:p-8"
   >
     <section
-      class="border-4 p-6 shadow-[8px_8px_0_#000] transition-colors duration-300 md:p-8"
-      :class="
-        isTerminal
-          ? 'border-[#00d9ff] bg-[#10191d] shadow-[8px_8px_0_#ff2e88]'
-          : 'border-black bg-white'
-      "
+      class="mx-auto max-w-7xl border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] transition-colors duration-300 sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)] md:p-8"
     >
-      <header class="mb-12 flex items-start justify-between gap-6">
-        <div>
-          <p class="text-sm font-black uppercase tracking-[0.18em]">IVAN_JIMENEZ_PROFILE.EXE</p>
+      <header
+        class="mb-10 flex flex-col items-stretch justify-between gap-5 sm:flex-row sm:items-start md:mb-12"
+      >
+        <div class="min-w-0">
+          <p
+            class="break-words text-xs font-black uppercase tracking-[0.12em] sm:text-sm sm:tracking-[0.18em]"
+          >
+            IVAN_JIMENEZ_PROFILE.EXE
+          </p>
 
           <p
-            class="mt-2 text-xs font-black uppercase tracking-[0.14em]"
-            :class="isTerminal ? 'text-[#b6ff00]' : 'text-black/60'"
+            class="mt-2 break-words text-xs font-black uppercase tracking-[0.1em] text-[var(--muted)] sm:tracking-[0.14em]"
           >
-            {{ isTerminal ? 'TERMINAL MODE ONLINE' : 'NEO-BRUTALIST SYSTEM' }}
+            {{ systemLabel }}
           </p>
         </div>
 
-        <div class="flex flex-wrap justify-end gap-3">
+        <div class="flex flex-wrap gap-3 sm:justify-end">
           <button
-            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer"
-            :class="
-              isTerminal
-                ? 'border-[#00d9ff] bg-[#ff2e88] text-white'
-                : 'border-black bg-[#ff2e88] text-white'
-            "
+            class="min-w-0 flex-1 border-4 border-[var(--border)] bg-[var(--accent-2)] px-3 py-2 text-xs font-black uppercase text-[var(--accent-2-text)] shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)] active:translate-x-1 active:translate-y-1 active:shadow-none sm:flex-none sm:px-4 sm:text-sm"
             type="button"
             @click="toggleLanguage"
           >
@@ -74,39 +86,34 @@ const toggleTheme = () => {
           </button>
 
           <button
-            class="border-4 px-4 py-2 text-sm font-black uppercase shadow-[4px_4px_0_#000] active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer"
-            :class="
-              isTerminal
-                ? 'border-[#b6ff00] bg-[#080f12] text-[#b6ff00]'
-                : 'border-black bg-[#00d9ff] text-black'
-            "
+            class="min-w-0 flex-1 border-4 border-[var(--border)] bg-[var(--accent-4)] px-3 py-2 text-xs font-black uppercase text-[var(--accent-4-text)] shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)] active:translate-x-1 active:translate-y-1 active:shadow-none sm:flex-none sm:px-4 sm:text-sm"
             type="button"
             @click="toggleTheme"
           >
-            Mode: {{ isTerminal ? 'Brutal' : 'Terminal' }}
+            Mode: {{ modeLabel }}
           </button>
         </div>
       </header>
 
-      <HeroSection :portfolio="portfolio" :is-terminal="isTerminal" />
+      <HeroSection :portfolio="portfolio" />
 
-      <SecurityFocus :section="portfolio.securityFocus" :is-terminal="isTerminal" />
+      <SecurityFocus :section="portfolio.securityFocus" />
 
-      <ToolsetSection :section="portfolio.toolset" :is-terminal="isTerminal" />
+      <ToolsetSection :section="portfolio.toolset" />
 
-      <ProjectsSection :section="portfolio.projects" :is-terminal="isTerminal" />
+      <ProjectsSection :section="portfolio.projects" />
 
-      <ExperienceLog :section="portfolio.experience" :is-terminal="isTerminal" />
+      <ExperienceLog :section="portfolio.experience" />
 
-      <EducationSection :section="portfolio.education" :is-terminal="isTerminal" />
+      <EducationSection :section="portfolio.education" />
 
-      <LanguagesSection :section="portfolio.languages" :is-terminal="isTerminal" />
+      <LanguagesSection :section="portfolio.languages" />
 
-      <CertificationsSection :section="portfolio.certifications" :is-terminal="isTerminal" />
+      <CertificationsSection :section="portfolio.certifications" />
 
-      <ContactSection :section="portfolio.contact" :is-terminal="isTerminal" />
+      <ContactSection :section="portfolio.contact" />
 
-      <FooterSection :section="portfolio.footer" :is-terminal="isTerminal" />
+      <FooterSection :section="portfolio.footer" />
     </section>
   </main>
 </template>

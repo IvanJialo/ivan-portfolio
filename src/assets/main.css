@@ -3,3 +3,127 @@
 html {
   scroll-behavior: smooth;
 }
+
+[data-theme='brutal'] {
+  --bg: #f5f1e8;
+  --surface: #ffffff;
+  --surface-alt: #f5f1e8;
+  --surface-strong: #111111;
+  --text: #111111;
+  --muted: rgb(17 17 17 / 0.78);
+  --border: #000000;
+  --shadow: #000000;
+  --accent: #00ff00;
+  --accent-2: #ff00ff;
+  --accent-3: #ffa500;
+  --accent-4: #00d9ff;
+  --accent-readable: var(--accent);
+  --accent-2-readable: var(--accent-2);
+  --accent-4-readable: var(--accent-4);
+  --accent-text: #111111;
+  --accent-2-text: #ffffff;
+  --accent-3-text: #111111;
+  --accent-4-text: #111111;
+  --inverse-text: #ffffff;
+  --focus: #ff00ff;
+  --glow: rgb(0 0 0 / 0);
+  --accent-outline:
+    -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000,
+    2px 2px 0 #000000;
+}
+
+[data-theme='neon'] {
+  --bg: #080f12;
+  --surface: #10191d;
+  --surface-alt: #080f12;
+  --surface-strong: #000000;
+  --text: #f5f1e8;
+  --muted: rgb(245 241 232 / 0.76);
+  --border: #00d9ff;
+  --shadow: #ff2e88;
+  --accent: #b6ff00;
+  --accent-2: #ff2e88;
+  --accent-3: #ffa500;
+  --accent-4: #00d9ff;
+  --accent-readable: #b6ff00;
+  --accent-2-readable: #ff2e88;
+  --accent-4-readable: #00d9ff;
+  --accent-text: #111111;
+  --accent-2-text: #ffffff;
+  --accent-3-text: #111111;
+  --accent-4-text: #061014;
+  --inverse-text: #ffffff;
+  --focus: #b6ff00;
+  --glow: rgb(0 217 255 / 0.24);
+  --accent-outline: 0 0 10px var(--glow), 1px 1px 0 #000000;
+}
+
+[data-theme='dark'] {
+  --bg: #111827;
+  --surface: #1f2937;
+  --surface-alt: #151f2e;
+  --surface-strong: #0b1120;
+  --text: #f8fafc;
+  --muted: rgb(248 250 252 / 0.68);
+  --border: #64748b;
+  --shadow: #020617;
+  --accent: #22c55e;
+  --accent-2: #38bdf8;
+  --accent-3: #f59e0b;
+  --accent-4: #94a3b8;
+  --accent-readable: #86efac;
+  --accent-2-readable: #7dd3fc;
+  --accent-4-readable: #cbd5e1;
+  --accent-text: #07120b;
+  --accent-2-text: #07111f;
+  --accent-3-text: #111111;
+  --accent-4-text: #0f172a;
+  --inverse-text: #ffffff;
+  --focus: #38bdf8;
+  --glow: rgb(56 189 248 / 0.08);
+  --accent-outline: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.text-accent-outlined {
+  text-shadow: var(--accent-outline);
+}
+
+@keyframes blink-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.animate-blink-soft {
+  animation: blink-soft 1.4s infinite;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 900ms ease-out;
+}

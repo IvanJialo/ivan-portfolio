@@ -7,39 +7,28 @@ defineProps({
     type: Object,
     required: true,
   },
-  isTerminal: {
-    type: Boolean,
-    required: false,
-  },
 })
 </script>
 
 <template>
   <section
-    class="mt-8 border-4 p-6 shadow-[8px_8px_0_#000]"
-    :class="isTerminal ? 'border-[#b6ff00] bg-[#080f12]' : 'border-black bg-white'"
+    class="mt-8 border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
-    <SectionTitle :title="section.title" :subtitle="section.subtitle" :is-terminal="isTerminal" />
-    <div class="grip gap-5 lg:grid-cols-3">
+    <SectionTitle :title="section.title" :subtitle="section.subtitle" />
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       <article
         v-for="group in section.groups"
         :key="group.name"
-        class="border-4 p-4 mb-4 shadow-[5px_5px_0_#000]"
-        :class="isTerminal ? 'border-[#00d9ff] bg-[#10191d]' : 'border-black bg-[#f5f1e8]'"
+        class="min-w-0 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_12px_var(--glow)]"
       >
         <h3
-          class="mb-4 border-4 px-3 py-2 text-sm font-black uppercase"
-          :class="
-            isTerminal
-              ? 'border-[#ff2e88] bg-black text-[#ff2e88]'
-              : 'border-black bg-[#00d9ff] text-black'
-          "
+          class="mb-4 break-words border-4 border-[var(--border)] bg-[var(--accent-4)] px-3 py-2 text-sm font-black uppercase text-[var(--accent-4-text)]"
         >
           {{ group.name }}
         </h3>
 
         <div class="flex flex-wrap gap-3">
-          <SkillBadge v-for="item in group.items" :key="item" :is-terminal="isTerminal">
+          <SkillBadge v-for="item in group.items" :key="item">
             {{ item }}
           </SkillBadge>
         </div>

@@ -8,31 +8,20 @@ defineProps({
     type: String,
     default: '',
   },
-  isTerminal: {
-    type: Boolean,
-    default: false,
-  },
 })
 </script>
 
 <template>
-  <div class="mb-6">
-    <div class="flex items-center gap-3">
-      <span
-        class="h-5 w-5 border-4"
-        :class="isTerminal ? 'border-[#b6ff00] bg-[#ff2e88]' : 'border-black bg-[#b6ff00]'"
-      ></span>
+  <div class="mb-6 min-w-0">
+    <div class="flex items-start gap-3">
+      <span class="mt-1 h-5 w-5 shrink-0 border-4 border-[var(--border)] bg-[var(--accent)]"></span>
 
-      <h2 class="text-2xl font-black uppercase md:text-3xl">
+      <h2 class="min-w-0 break-words text-xl font-black uppercase sm:text-2xl md:text-3xl">
         {{ title }}
       </h2>
     </div>
 
-    <p
-      v-if="subtitle"
-      class="mt-2 max-w-3xl text-sm font-bold md:text-base"
-      :class="isTerminal ? 'text-[#f5f1e8]/80' : 'text-black/70'"
-    >
+    <p v-if="subtitle" class="mt-2 max-w-3xl text-sm font-bold text-[var(--muted)] md:text-base">
       {{ subtitle }}
     </p>
   </div>

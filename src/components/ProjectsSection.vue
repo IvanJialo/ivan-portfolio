@@ -7,20 +7,15 @@ defineProps({
     type: Object,
     required: true,
   },
-  isTerminal: {
-    type: Boolean,
-    default: false,
-  },
 })
 </script>
 
 <template>
   <section
     id="projects"
-    class="mt-8 border-4 p-6 shadow-[8px_8px_0_#000]"
-    :class="isTerminal ? 'border-[#ff2e88] bg-[#10191d]' : 'border-black bg-[#f5f1e8]'"
+    class="mt-8 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
-    <SectionTitle :title="section.title" :subtitle="section.subtitle" :is-terminal="isTerminal" />
+    <SectionTitle :title="section.title" :subtitle="section.subtitle" />
 
     <div class="grid gap-6 xl:grid-cols-2">
       <ProjectCard
@@ -28,7 +23,6 @@ defineProps({
         :key="project.name"
         :project="project"
         :index="index"
-        :is-terminal="isTerminal"
       />
     </div>
   </section>
