@@ -45,11 +45,11 @@ defineProps({
       </div>
     </div>
 
-    <p
+    <!-- <p
       class="mt-5 max-h-[5.2rem] overflow-hidden break-words text-sm font-semibold leading-relaxed text-[var(--muted)]"
     >
       {{ project.description }}
-    </p>
+    </p> -->
 
     <div class="mt-5 flex flex-wrap gap-2">
       <span
