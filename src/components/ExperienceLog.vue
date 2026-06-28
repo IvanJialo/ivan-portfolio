@@ -52,7 +52,15 @@ defineProps({
           <div
             class="max-w-full break-words border-4 border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)]"
           >
-            <p>{{ item.period }}</p>
+            <p
+              :class="{
+                'animate-blink-soft':
+                  item.period.toLowerCase().includes('present') ||
+                  item.period.toLowerCase().includes('presente'),
+              }"
+            >
+              {{ item.period }}
+            </p>
             <p class="mt-1 opacity-70">{{ item.location }}</p>
           </div>
         </div>
