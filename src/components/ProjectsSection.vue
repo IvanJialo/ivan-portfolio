@@ -91,12 +91,13 @@ const visibleProjects = computed(() => {
           :key="item.project.name"
           class="transition-all duration-300"
           :class="{
-            'col-start-1 scale-[0.82] opacity-55 hover:scale-[0.86] hover:opacity-85':
+            'col-start-1 scale-[0.82] cursor-pointer opacity-55 hover:scale-[0.86] hover:opacity-85':
               item.position === 'left',
             'col-start-2 scale-100 opacity-100': item.position === 'center',
-            'col-start-3 scale-[0.82] opacity-55 hover:scale-[0.86] hover:opacity-85':
+            'col-start-3 scale-[0.82] cursor-pointer opacity-55 hover:scale-[0.86] hover:opacity-85':
               item.position === 'right',
           }"
+          @click="item.position !== 'center' && (activeIndex = item.index)"
         >
           <ProjectCard
             v-if="item.position === 'center'"

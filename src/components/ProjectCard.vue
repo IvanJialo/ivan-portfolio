@@ -15,7 +15,7 @@ defineProps({
 
 <template>
   <article
-    class="min-w-0 border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] transition-transform hover:-translate-y-1 sm:p-5 sm:shadow-[7px_7px_0_var(--shadow),0_0_18px_var(--glow)]"
+    class="min-w-0 border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] sm:p-5 sm:shadow-[7px_7px_0_var(--shadow),0_0_18px_var(--glow)]"
   >
     <div class="mb-5 flex flex-col items-start justify-between gap-4 sm:flex-row">
       <div class="min-w-0">
