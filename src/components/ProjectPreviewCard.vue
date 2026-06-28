@@ -13,7 +13,7 @@ defineProps({
 
 <template>
   <article
-    class="h-full min-h-[340px] overflow-hidden border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] transition-all duration-300"
+    class="neon-project-preview h-full min-h-[340px] overflow-hidden border-4 border-[var(--border)] bg-[var(--surface)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] transition-all duration-300"
   >
     <div class="mb-5 flex flex-col items-start justify-between gap-3">
       <p
