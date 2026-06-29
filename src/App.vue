@@ -8,7 +8,7 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import ExperienceLog from './components/ExperienceLog.vue'
 import EducationSection from './components/EducationSection.vue'
 import LanguagesSection from './components/LanguagesSection.vue'
-import CertificationsSection from './components/CertificationsSection.vue'
+// import CertificationsSection from './components/CertificationsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import portfolioEn from './data/portfolio.en.json'
@@ -109,7 +109,7 @@ const toggleTheme = () => {
 
       <LanguagesSection :section="portfolio.languages" />
 
-      <CertificationsSection :section="portfolio.certifications" />
+      <!-- <CertificationsSection :section="portfolio.certifications" /> -->
 
       <ContactSection :section="portfolio.contact" />
 
