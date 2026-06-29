@@ -1,4 +1,6 @@
 <script setup>
+import { ref } from 'vue'
+
 import BrutalButton from './BrutalButton.vue'
 import SectionTitle from './SectionTitle.vue'
 
@@ -9,11 +11,25 @@ defineProps({
   },
 })
 
+const copied = ref(false)
+
 const getPublicPath = (path) => {
   return `${import.meta.env.BASE_URL}${path}`
 }
-</script>
 
+const copyEmail = async (email) => {
+  try {
+    await navigator.clipboard.writeText(email)
+    copied.value = true
+
+    setTimeout(() => {
+      copied.value = false
+    }, 1800)
+  } catch {
+    copied.value = false
+  }
+}
+</script>
 <template>
   <section
     class="mt-8 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
@@ -44,6 +60,14 @@ const getPublicPath = (path) => {
           <BrutalButton :href="`mailto:${section.email}`" variant="primary">
             {{ section.actions.email }}
           </BrutalButton>
+
+          <button
+            type="button"
+            class="inline-flex w-full max-w-full items-center justify-center border-4 border-[var(--border)] bg-[var(--surface-alt)] px-6 py-3 text-center font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none sm:w-44"
+            @click="copyEmail(section.email)"
+          >
+            {{ copied ? section.actions.copied : section.actions.copyEmail }}
+          </button>
 
           <BrutalButton :href="section.linkedin" variant="secondary">
             {{ section.actions.linkedin }}

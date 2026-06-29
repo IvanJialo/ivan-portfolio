@@ -265,7 +265,9 @@
       "email": "Email",
       "linkedin": "LinkedIn",
       "cvEnglish": "Descargar CV EN",
-      "cvSpanish": "Descargar CV ES"
+      "cvSpanish": "Descargar CV ES",
+      "copyEmail": "Copiar email",
+      "copied": "¡Copiado!"
     },
     "cv": {
       "english": "cv/IvanJimenezAlonsoEN.pdf",
