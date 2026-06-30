@@ -1,44 +1,45 @@
-# ivan-portfolio
+# Iván Jiménez — Cybersecurity Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal portfolio website focused on my transition from software development into cybersecurity.
 
-## Recommended IDE Setup
+Live site:  
+https://ivanjialo.github.io/ivan-portfolio/
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## About
 
-## Recommended Browser Setup
+This portfolio showcases my professional background, technical skills, hands-on projects and cybersecurity learning path.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+My current focus areas include:
 
-## Customize configuration
+- Network security
+- Threat detection
+- Security monitoring
+- Incident response
+- Digital forensics
+- Web application security
+- Offensive security fundamentals
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Tech Stack
 
-## Project Setup
+- Vue.js
+- Vite
+- Tailwind CSS
+- JavaScript
+- GitHub Pages
 
-```sh
-pnpm install
-```
+## Highlights
 
-### Compile and Hot-Reload for Development
+- Responsive portfolio layout
+- Brutalist, Neon and Dark visual modes
+- English and Spanish content
+- Project and lab showcase
+- Downloadable CVs
+- Contact links
 
-```sh
-pnpm dev
-```
+## Contact
 
-### Compile and Minify for Production
+LinkedIn:  
+https://www.linkedin.com/in/ivanjimenezalonso
 
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+Portfolio:  
+https://ivanjialo.github.io/ivan-portfolio/
