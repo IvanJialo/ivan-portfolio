@@ -8,7 +8,7 @@
     "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "status": "Disponible para puestos de ciberseguridad",
-    "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Interesado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
+    "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Enfocado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
   },
   "navigation": {
     "startMission": "Iniciar misión",
@@ -16,7 +16,7 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "language": "EN",
-    "theme": "Modo terminal"
+    "theme": "Modo cyber"
   },
   "statusPanel": {
     "title": "Estado del sistema",
@@ -31,7 +31,7 @@
       },
       {
         "label": "Enfoque",
-        "value": "Seguridad de redes"
+        "value": "SOC / Detección"
       },
       {
         "label": "Perfil",
@@ -39,20 +39,20 @@
       },
       {
         "label": "Modo",
-        "value": "Aprendiendo / Aplicando"
+        "value": "Aprendiendo / Practicando"
       }
     ]
   },
   "securityFocus": {
     "title": "Enfoque en ciberseguridad",
-    "subtitle": "Áreas sobre las que estoy construyendo mi perfil en ciberseguridad.",
+    "subtitle": "Áreas principales de mi formación y práctica en ciberseguridad.",
     "items": [
-      "Seguridad de redes",
-      "Detección de amenazas",
       "Monitorización de seguridad",
+      "Detección de amenazas",
       "Respuesta ante incidentes",
-      "Evaluación de vulnerabilidades",
+      "Seguridad de redes",
       "Análisis forense digital",
+      "Evaluación de vulnerabilidades",
       "Seguridad en aplicaciones web",
       "Fundamentos de seguridad ofensiva"
     ]
@@ -64,15 +64,16 @@
       {
         "name": "Ciberseguridad",
         "items": [
-          "Wireshark",
-          "Burp Suite",
           "Splunk",
-          "TheHive",
           "Wazuh",
-          "Snort",
           "Suricata",
+          "Snort",
+          "Sysmon",
+          "Wireshark",
+          "TheHive",
           "Volatility",
-          "Autopsy"
+          "Autopsy",
+          "Burp Suite"
         ]
       },
       {
@@ -94,40 +95,80 @@
   },
   "projects": {
     "title": "Misiones / Proyectos",
-    "subtitle": "Proyectos de software y ciberseguridad que representan mi perfil técnico.",
+    "subtitle": "Laboratorios de ciberseguridad y proyectos de software que reflejan mi experiencia práctica y perfil técnico.",
     "items": [
       {
         "name": "WhatTheGame",
         "type": "Aplicación web",
         "status": "Completado",
         "category": "Desarrollo",
-        "description": "Aplicación web de descubrimiento de videojuegos desarrollada con Vue.js, Tailwind CSS, Firebase e integración con API externa.",
+        "description": "Aplicación web de descubrimiento de videojuegos desarrollada con Vue.js, Tailwind CSS, Firebase e integración con una API externa.",
         "technologies": ["Vue.js", "Tailwind CSS", "Firebase", "JavaScript", "API"],
         "liveUrl": "https://what-the-game.vercel.app/"
       },
       {
-        "name": "Laboratorio TheHive, Cortex y MinIO",
+        "name": "Security Monitoring & Threat Detection",
+        "type": "Laboratorios de ciberseguridad",
+        "status": "Completado",
+        "category": "SOC / Detección",
+        "description": "Conjunto de laboratorios orientados a monitorización, análisis de eventos y detección de amenazas mediante telemetría de endpoint y tráfico de red.",
+        "technologies": ["Splunk", "Suricata", "Sysmon", "Snort", "Arpwatch"]
+      },
+      {
+        "name": "SOC Incident Response Lab",
         "type": "Laboratorio de ciberseguridad",
         "status": "Completado",
-        "category": "Blue Team",
-        "description": "Despliegue e integración de TheHive, Cortex y MinIO en un entorno cloud para gestión de incidentes y flujos de análisis de seguridad.",
+        "category": "SOC / Incident Response",
+        "description": "Despliegue e integración de una plataforma de gestión y análisis de incidentes en entorno cloud utilizando TheHive, Cortex y MinIO.",
         "technologies": ["TheHive", "Cortex", "MinIO", "AWS", "Linux", "Nginx"]
       },
       {
-        "name": "Laboratorio de Monitorización de Seguridad",
-        "type": "Laboratorio de ciberseguridad",
+        "name": "Network Hardening & Monitoring",
+        "type": "Laboratorios de ciberseguridad",
         "status": "Completado",
-        "category": "Detección",
-        "description": "Laboratorio de monitorización de seguridad utilizando Splunk, Suricata, Snort y Wazuh para analizar alertas, logs y actividad de red.",
-        "technologies": ["Splunk", "Suricata", "Snort", "Wazuh", "Linux"]
+        "category": "Blue Team / Redes",
+        "description": "Conjunto de laboratorios de bastionado, segmentación y monitorización de redes, incluyendo VLANs, DMZ, reglas de firewall y acceso remoto seguro mediante WireGuard.",
+        "technologies": ["Wazuh", "Centreon", "The Dude", "pfSense", "GNS3", "WireGuard"]
       },
       {
-        "name": "Informes de Análisis Forense Digital",
-        "type": "Práctica de ciberseguridad",
+        "name": "Digital Forensics & Incident Analysis",
+        "type": "Laboratorios de análisis forense",
         "status": "Completado",
-        "category": "Forense",
-        "description": "Ejercicios de análisis forense sobre capturas de red, evidencias de sistema, correos maliciosos y redacción técnica estructurada.",
-        "technologies": ["Wireshark", "Autopsy", "Volatility", "Linux", "Reporting"]
+        "category": "DFIR / Forense",
+        "description": "Análisis de evidencias digitales sobre sistemas, memoria, dispositivos Android y capturas de red, incluyendo reconstrucción de actividad y elaboración de informes técnicos.",
+        "technologies": ["Autopsy", "Volatility", "Wireshark", "Linux", "Android", "Reporting"]
+      },
+      {
+        "name": "WPA2 Wireless Security Assessment",
+        "type": "Laboratorio de ciberseguridad",
+        "status": "Completado",
+        "category": "Offensive / Wireless",
+        "description": "Evaluación controlada de seguridad WPA2 mediante captura de autenticaciones, análisis de handshakes y PMKID, desautenticación y auditoría de resistencia de credenciales.",
+        "technologies": ["Aircrack-ng", "Hashcat", "hcxtools", "WPA2", "Linux"]
+      },
+      {
+        "name": "Web Application Security Lab",
+        "type": "Laboratorios de ciberseguridad",
+        "status": "Completado",
+        "category": "Offensive / Web",
+        "description": "Prácticas de análisis y explotación controlada de vulnerabilidades web sobre aplicaciones deliberadamente vulnerables, examinando tráfico HTTP y comportamiento de la aplicación.",
+        "technologies": ["OWASP Juice Shop", "OWASP Mutillidae II", "Burp Suite", "XSS", "HTTP"]
+      },
+      {
+        "name": "Vulnerability Exploitation Lab",
+        "type": "Laboratorios de ciberseguridad",
+        "status": "Completado",
+        "category": "Offensive / Explotación",
+        "description": "Explotación controlada de múltiples servicios y sistemas vulnerables desplegados en entornos reproducibles, trabajando con distintos vectores y escenarios de ataque.",
+        "technologies": ["Metasploit", "Vagrant", "Linux", "Windows"]
+      },
+      {
+        "name": "MITM & Traffic Interception Lab",
+        "type": "Laboratorios de ciberseguridad",
+        "status": "Completado",
+        "category": "Offensive / Redes",
+        "description": "Conjunto de laboratorios de interceptación y análisis de comunicaciones en redes controladas mediante técnicas Man-in-the-Middle y proxies de inspección de tráfico.",
+        "technologies": ["Bettercap", "SSLstrip", "mitmproxy", "Linux"]
       }
     ]
   },
@@ -234,31 +275,17 @@
     "subtitle": "Certificaciones y objetivos de aprendizaje planificados para reforzar mi perfil en ciberseguridad.",
     "items": [
       {
-        "name": "CompTIA Security+",
-        "issuer": "CompTIA",
-        "status": "Planificada",
-        "description": "Certificación general de ciberseguridad centrada en fundamentos de seguridad, amenazas, gestión de riesgos, arquitectura y operaciones.",
-        "tags": ["Fundamentos de Seguridad", "Riesgo", "Amenazas"]
-      },
-      {
-        "name": "Cisco CCNA",
-        "issuer": "Cisco",
-        "status": "Objetivo Futuro",
-        "description": "Certificación de redes centrada en routing, switching, servicios IP, fundamentos de seguridad y resolución de problemas de red.",
-        "tags": ["Redes", "TCP/IP", "Routing"]
-      },
-      {
-        "name": "Formación Blue Team / SOC",
-        "issuer": "Laboratorios prácticos",
-        "status": "En Progreso",
-        "description": "Aprendizaje práctico centrado en análisis SIEM, triaje de alertas, respuesta ante incidentes, detección de amenazas y seguridad endpoint.",
-        "tags": ["SOC", "SIEM", "Respuesta ante Incidentes"]
+        "name": "Prueba",
+        "issuer": "Prueba",
+        "status": "Prueba",
+        "description": "Descripcion de prueba",
+        "tags": ["Prueba"]
       }
     ]
   },
   "contact": {
     "title": "¿Hablamos?",
-    "subtitle": "Disponible para puestos junior de ciberseguridad, SOC analyst, monitorización de seguridad, detección de amenazas y oportunidades de soporte técnico.",
+    "subtitle": "Disponible para oportunidades junior en ciberseguridad y SOC, especialmente en monitorización de seguridad, detección de amenazas y respuesta ante incidentes.",
     "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {

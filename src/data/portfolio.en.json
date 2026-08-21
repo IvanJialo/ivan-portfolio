@@ -8,7 +8,7 @@
     "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "status": "Available for cybersecurity roles",
-    "summary": "Junior Cybersecurity Analyst with a software development background and specialized training in cybersecurity. Interested in network security, threat detection, incident response, and offensive security."
+    "summary": "Junior Cybersecurity Analyst with a software development background and specialized training in cybersecurity. Focused on network security, threat detection, incident response, and offensive security."
   },
   "navigation": {
     "startMission": "Start mission",
@@ -16,7 +16,7 @@
     "projects": "Projects",
     "contact": "Contact",
     "language": "ES",
-    "theme": "Terminal mode"
+    "theme": "Cyber mode"
   },
   "statusPanel": {
     "title": "System status",
@@ -31,7 +31,7 @@
       },
       {
         "label": "Focus",
-        "value": "Network Security"
+        "value": "SOC / Detection"
       },
       {
         "label": "Build",
@@ -39,20 +39,20 @@
       },
       {
         "label": "Mode",
-        "value": "Learning / Applying"
+        "value": "Learning / Hands-on"
       }
     ]
   },
   "securityFocus": {
     "title": "Security focus",
-    "subtitle": "Areas I am building my cybersecurity profile around.",
+    "subtitle": "Core areas of my cybersecurity training and hands-on practice.",
     "items": [
-      "Network Security",
-      "Threat Detection",
       "Security Monitoring",
+      "Threat Detection",
       "Incident Response",
-      "Vulnerability Assessment",
+      "Network Security",
       "Digital Forensics",
+      "Vulnerability Assessment",
       "Web Application Security",
       "Offensive Security Fundamentals"
     ]
@@ -64,15 +64,16 @@
       {
         "name": "Cybersecurity",
         "items": [
-          "Wireshark",
-          "Burp Suite",
           "Splunk",
-          "TheHive",
           "Wazuh",
-          "Snort",
           "Suricata",
+          "Snort",
+          "Sysmon",
+          "Wireshark",
+          "TheHive",
           "Volatility",
-          "Autopsy"
+          "Autopsy",
+          "Burp Suite"
         ]
       },
       {
@@ -87,40 +88,80 @@
   },
   "projects": {
     "title": "Missions / Projects",
-    "subtitle": "Selected software and cybersecurity projects that represent my technical background.",
+    "subtitle": "Cybersecurity labs and software projects that reflect my hands-on experience and technical profile.",
     "items": [
       {
         "name": "WhatTheGame",
         "type": "Web Application",
         "status": "Completed",
         "category": "Development",
-        "description": "Video game discovery web application built with Vue.js, Tailwind CSS, Firebase and external API integration.",
+        "description": "Video game discovery web application developed with Vue.js, Tailwind CSS, Firebase and integration with an external API.",
         "technologies": ["Vue.js", "Tailwind CSS", "Firebase", "JavaScript", "API"],
         "liveUrl": "https://what-the-game.vercel.app/"
       },
       {
-        "name": "TheHive, Cortex & MinIO Lab",
+        "name": "Security Monitoring & Threat Detection",
+        "type": "Cybersecurity Labs",
+        "status": "Completed",
+        "category": "SOC / Detection",
+        "description": "Set of labs focused on security monitoring, event analysis and threat detection using endpoint telemetry and network traffic analysis.",
+        "technologies": ["Splunk", "Suricata", "Sysmon", "Snort", "Arpwatch"]
+      },
+      {
+        "name": "SOC Incident Response Lab",
         "type": "Cybersecurity Lab",
         "status": "Completed",
-        "category": "Blue Team",
-        "description": "Deployment and integration of TheHive, Cortex and MinIO in a cloud environment for incident management and security analysis workflows.",
+        "category": "SOC / Incident Response",
+        "description": "Deployment and integration of an incident management and analysis platform in a cloud environment using TheHive, Cortex and MinIO.",
         "technologies": ["TheHive", "Cortex", "MinIO", "AWS", "Linux", "Nginx"]
       },
       {
-        "name": "Network Security Monitoring Lab",
-        "type": "Cybersecurity Lab",
+        "name": "Network Hardening & Monitoring",
+        "type": "Cybersecurity Labs",
         "status": "Completed",
-        "category": "Detection",
-        "description": "Security monitoring lab using tools such as Splunk, Suricata, Snort and Wazuh to analyze alerts, logs and network activity.",
-        "technologies": ["Splunk", "Suricata", "Snort", "Wazuh", "Linux"]
+        "category": "Blue Team / Networks",
+        "description": "Set of labs focused on network hardening, segmentation and monitoring, including VLANs, DMZ design, firewall rules and secure remote access through WireGuard.",
+        "technologies": ["Wazuh", "Centreon", "The Dude", "pfSense", "GNS3", "WireGuard"]
       },
       {
-        "name": "Digital Forensics Reports",
-        "type": "Cybersecurity Practice",
+        "name": "Digital Forensics & Incident Analysis",
+        "type": "Digital Forensics Labs",
         "status": "Completed",
-        "category": "Forensics",
-        "description": "Forensic analysis exercises involving network captures, system evidence, malicious emails and structured technical reporting.",
-        "technologies": ["Wireshark", "Autopsy", "Volatility", "Linux", "Reporting"]
+        "category": "DFIR / Forensics",
+        "description": "Analysis of digital evidence from systems, memory, Android devices and network captures, including activity reconstruction and technical reporting.",
+        "technologies": ["Autopsy", "Volatility", "Wireshark", "Linux", "Android", "Reporting"]
+      },
+      {
+        "name": "WPA2 Wireless Security Assessment",
+        "type": "Cybersecurity Lab",
+        "status": "Completed",
+        "category": "Offensive / Wireless",
+        "description": "Controlled WPA2 security assessment involving authentication capture, handshake and PMKID analysis, deauthentication and credential resilience testing.",
+        "technologies": ["Aircrack-ng", "Hashcat", "hcxtools", "WPA2", "Linux"]
+      },
+      {
+        "name": "Web Application Security Lab",
+        "type": "Cybersecurity Labs",
+        "status": "Completed",
+        "category": "Offensive / Web",
+        "description": "Hands-on analysis and controlled exploitation of web vulnerabilities in deliberately vulnerable applications, focusing on HTTP traffic and application behavior.",
+        "technologies": ["OWASP Juice Shop", "OWASP Mutillidae II", "Burp Suite", "XSS", "HTTP"]
+      },
+      {
+        "name": "Vulnerability Exploitation Lab",
+        "type": "Cybersecurity Labs",
+        "status": "Completed",
+        "category": "Offensive / Exploitation",
+        "description": "Controlled exploitation of multiple vulnerable services and systems deployed in reproducible environments, covering different attack vectors and exploitation scenarios.",
+        "technologies": ["Metasploit", "Vagrant", "Linux", "Windows"]
+      },
+      {
+        "name": "MITM & Traffic Interception Labs",
+        "type": "Cybersecurity Labs",
+        "status": "Completed",
+        "category": "Offensive / Networks",
+        "description": "Set of labs focused on communication interception and traffic analysis in controlled networks using Man-in-the-Middle techniques and interception proxies.",
+        "technologies": ["Bettercap", "SSLstrip", "mitmproxy", "Linux"]
       }
     ]
   },
@@ -171,7 +212,7 @@
     "subtitle": "Formal training in cybersecurity, software development and computer systems.",
     "items": [
       {
-        "title": "Cybersecurity Specialization Course in IT Environments",
+        "title": "Specialization Course in Cybersecurity in IT Environments",
         "school": "IES San Vicente",
         "period": "Sep 2025 - Jun 2026",
         "category": "Cybersecurity",
@@ -179,7 +220,7 @@
         "tags": ["Cybersecurity", "Network Security", "Incident Response", "Digital Forensics"]
       },
       {
-        "title": "Higher Technician in Multi-Platform Application Development",
+        "title": "Higher Technician in Multiplatform Application Development",
         "school": "IES El Pla",
         "period": "Sep 2023 - Jun 2025",
         "category": "Software Development",
@@ -211,7 +252,7 @@
         "progress": 75
       },
       {
-        "name": "Catalan",
+        "name": "Valencian",
         "level": "Native",
         "progress": 100
       }
@@ -246,7 +287,7 @@
   },
   "contact": {
     "title": "Ready to connect?",
-    "subtitle": "Open to junior cybersecurity roles, SOC analyst positions, security monitoring, threat detection and technical support opportunities.",
+    "subtitle": "Open to junior cybersecurity and SOC opportunities, especially in security monitoring, threat detection and incident response.",
     "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {

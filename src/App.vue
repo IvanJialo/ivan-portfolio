@@ -25,6 +25,10 @@ const portfolio = computed(() => {
   return language.value === 'en' ? portfolioEn : portfolioEs
 })
 
+const languageLabel = computed(() => {
+  return `${language.value.toUpperCase()} \u2192 ${portfolio.value.navigation.language}`
+})
+
 const modeLabel = computed(() => {
   return theme.value.charAt(0).toUpperCase() + theme.value.slice(1)
 })
@@ -82,7 +86,7 @@ const toggleTheme = () => {
             type="button"
             @click="toggleLanguage"
           >
-            Lang: {{ portfolio.navigation.language }}
+            Lang: {{ languageLabel }}
           </button>
 
           <button
