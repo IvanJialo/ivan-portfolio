@@ -5,7 +5,6 @@
     "tagline": "Seguridad de Redes y Detección de Amenazas",
     "background": "Base en Desarrollo de Software",
     "location": "Alicante, España",
-    "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "status": "Disponible para puestos de ciberseguridad",
     "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Enfocado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
@@ -286,19 +285,41 @@
   "contact": {
     "title": "¿Hablamos?",
     "subtitle": "Disponible para oportunidades junior en ciberseguridad y SOC, especialmente en monitorización de seguridad, detección de amenazas y respuesta ante incidentes.",
-    "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {
-      "email": "Email",
       "linkedin": "LinkedIn",
       "cvEnglish": "Descargar CV EN",
-      "cvSpanish": "Descargar CV ES",
-      "copyEmail": "Copiar email",
-      "copied": "¡Copiado!"
+      "cvSpanish": "Descargar CV ES"
     },
     "cv": {
       "english": "cv/IvanJimenezAlonsoEN.pdf",
       "spanish": "cv/IvanJimenezAlonsoES.pdf"
+    },
+    "availability": "Disponible para trabajar",
+    "cvTitle": "Descargas de CV",
+    "available": "Disponible",
+    "responseTime": "Normalmente rápida",
+    "form": {
+      "title": "Formulario de contacto",
+      "intro": "Campos obligatorios: nombre, email y mensaje.",
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto (opcional)",
+      "message": "Mensaje",
+      "submit": "Enviar mensaje",
+      "sending": "Enviando…",
+      "success": "Formspree ha aceptado tu mensaje. Esto no confirma la entrega en la bandeja de entrada.",
+      "sendError": "No se ha podido confirmar el envío. Conservamos tu texto; inténtalo más tarde o contacta por LinkedIn.",
+      "rateLimited": "Demasiadas solicitudes. Espera antes de volver a intentarlo.",
+      "timeout": "Se ha agotado el tiempo de espera. La entrega no está confirmada; compruébalo antes de reenviar para evitar duplicados.",
+      "unavailable": "El formulario de contacto aún no está disponible. Puedes contactar por LinkedIn.",
+      "validationError": "Revisa los campos indicados.",
+      "nameError": "Introduce tu nombre (entre 1 y 100 caracteres).",
+      "emailError": "Introduce un email válido (máximo 254 caracteres).",
+      "subjectError": "El asunto admite hasta 200 caracteres.",
+      "messageError": "Introduce un mensaje (entre 1 y 5.000 caracteres).",
+      "leaveEmpty": "Deja este campo vacío",
+      "privacy": "Formspree procesará tu nombre, email y mensaje para gestionar tu consulta. No incluyas información sensible."
     }
   },
   "footer": {

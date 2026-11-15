@@ -5,7 +5,6 @@
     "tagline": "Network Security & Threat Detection",
     "background": "Software Development Background",
     "location": "Alicante, Spain",
-    "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "status": "Available for cybersecurity roles",
     "summary": "Junior Cybersecurity Analyst with a software development background and specialized training in cybersecurity. Focused on network security, threat detection, incident response, and offensive security."
@@ -288,19 +287,41 @@
   "contact": {
     "title": "Ready to connect?",
     "subtitle": "Open to junior cybersecurity and SOC opportunities, especially in security monitoring, threat detection and incident response.",
-    "email": "ivanjimenezalonso09@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {
-      "email": "Email",
       "linkedin": "LinkedIn",
       "cvEnglish": "Download CV EN",
-      "cvSpanish": "Download CV ES",
-      "copyEmail": "Copy email",
-      "copied": "Copied!"
+      "cvSpanish": "Download CV ES"
     },
     "cv": {
       "english": "cv/IvanJimenezAlonsoEN.pdf",
       "spanish": "cv/IvanJimenezAlonsoES.pdf"
+    },
+    "availability": "Open to work",
+    "cvTitle": "CV downloads",
+    "available": "Available",
+    "responseTime": "Usually fast",
+    "form": {
+      "title": "Contact form",
+      "intro": "Required fields: name, email and message.",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject (optional)",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Formspree accepted your message. This does not confirm delivery to the inbox.",
+      "sendError": "The submission could not be confirmed. Your text is preserved; please try again later or contact me on LinkedIn.",
+      "rateLimited": "Too many requests. Please wait before trying again.",
+      "timeout": "The request timed out. Delivery is unconfirmed; check before resending to avoid duplicates.",
+      "unavailable": "The contact form is not available yet. You can contact me on LinkedIn.",
+      "validationError": "Please review the marked fields.",
+      "nameError": "Enter your name (1–100 characters).",
+      "emailError": "Enter a valid email address (up to 254 characters).",
+      "subjectError": "Use up to 200 characters for the subject.",
+      "messageError": "Enter a message (1–5,000 characters).",
+      "leaveEmpty": "Leave this field empty",
+      "privacy": "Your name, email and message will be processed by Formspree to handle your enquiry. Do not include sensitive information."
     }
   },
   "footer": {

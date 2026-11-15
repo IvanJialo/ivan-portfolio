@@ -49,8 +49,8 @@ defineProps({
           LinkedIn
         </BrutalButton>
 
-        <BrutalButton href="mailto:ivanjimenezalonso09@gmail.com" variant="dark">
-          Email
+        <BrutalButton href="#contact" variant="dark">
+          {{ portfolio.navigation.contact }}
         </BrutalButton>
       </div>
     </div>
