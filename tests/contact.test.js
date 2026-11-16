@@ -28,10 +28,12 @@ test('request payload and explicit acceptance; mock only, no delivery test', asy
     assert.equal(url, 'https://formspree.io/f/abcdefgh')
     assert.equal(options.method, 'POST')
     assert.equal(options.headers.Accept, 'application/json')
+    assert.equal(options.credentials, 'omit')
+    assert.equal(options.referrerPolicy, 'no-referrer')
     assert.deepEqual(JSON.parse(options.body), { ...fields, name: 'Test', message: 'Hello' })
     return { ok: true, json: async () => ({ ok: true }) }
   })
-  await sendContact('https://formspree.io/f/abcdefgh', fields)
+  await sendContact('https://formspree.io/f/abcdefgh', { ...fields, privateState: 'not sent' })
 })
 test('HTTP errors, rate limiting, invalid responses and network failures reject', async (t) => {
   for (const status of [400, 403, 422, 429, 500]) {
@@ -52,4 +54,30 @@ test('HTTP errors, rate limiting, invalid responses and network failures reject'
     throw new TypeError('offline')
   })
   await assert.rejects(sendContact('unused', fields), /offline/)
+})
+
+test('malformed JSON, explicit rejection and cancellation never report success', async (t) => {
+  for (const result of [null, {}, { ok: false }]) {
+    const mock = t.mock.method(globalThis, 'fetch', async () => ({
+      ok: true,
+      json: async () => result,
+    }))
+    await assert.rejects(sendContact('unused', fields), /sendError/)
+    mock.mock.restore()
+  }
+  const malformed = t.mock.method(globalThis, 'fetch', async () => ({
+    ok: true,
+    json: async () => {
+      throw new SyntaxError('invalid JSON')
+    },
+  }))
+  await assert.rejects(sendContact('unused', fields), /invalid JSON/)
+  malformed.mock.restore()
+  const controller = new AbortController()
+  controller.abort()
+  t.mock.method(globalThis, 'fetch', async (_, options) => {
+    assert.equal(options.signal, controller.signal)
+    options.signal.throwIfAborted()
+  })
+  await assert.rejects(sendContact('unused', fields, controller.signal), { name: 'AbortError' })
 })

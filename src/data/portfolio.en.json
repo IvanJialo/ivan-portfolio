@@ -321,7 +321,8 @@
       "subjectError": "Use up to 200 characters for the subject.",
       "messageError": "Enter a message (1–5,000 characters).",
       "leaveEmpty": "Leave this field empty",
-      "privacy": "Your name, email and message will be processed by Formspree to handle your enquiry. Do not include sensitive information."
+      "privacy": "Your name, email, optional subject and message will be sent to Formspree so I can respond to your enquiry. Do not include sensitive information.",
+      "privacyPolicy": "Formspree privacy policy"
     }
   },
   "footer": {

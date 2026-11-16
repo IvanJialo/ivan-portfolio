@@ -52,14 +52,24 @@ async function submit() {
   } finally {
     clearTimeout(timeout)
     sending.value = false
+    await nextTick()
+    // Disabling the fieldset can drop focus to the body. Restore it only if
+    // the visitor has not moved to another control while waiting.
+    if (document.activeElement === document.body) {
+      form.value?.querySelector('button[type="submit"]')?.focus({ preventScroll: true })
+    }
   }
 }
 </script>
 <template>
   <form ref="form" class="mt-8 space-y-5" novalidate :aria-busy="sending" @submit.prevent="submit">
-    <p class="text-sm font-semibold text-[var(--muted)]">{{ texts.intro }}</p>
+    <p id="contact-intro" class="text-sm font-semibold text-[var(--muted)]">{{ texts.intro }}</p>
     <p v-if="!endpoint" class="border-2 border-[var(--border)] p-3">{{ texts.unavailable }}</p>
-    <fieldset :disabled="sending || !endpoint" class="min-w-0 space-y-5 disabled:opacity-70">
+    <fieldset
+      :disabled="sending || !endpoint"
+      aria-describedby="contact-intro contact-privacy"
+      class="min-w-0 space-y-5"
+    >
       <legend class="sr-only">{{ texts.title }}</legend>
       <div v-for="field in ['name', 'email', 'subject', 'message']" :key="field">
         <label :for="`contact-${field}`" class="mb-2 block font-bold">{{ texts[field] }}</label>
@@ -105,7 +115,15 @@ async function submit() {
           autocomplete="off"
         />
       </div>
-      <p class="text-sm text-[var(--muted)]">{{ texts.privacy }}</p>
+      <p id="contact-privacy" class="text-sm text-[var(--muted)]">
+        {{ texts.privacy }}
+        <a
+          class="font-bold underline underline-offset-4"
+          href="https://formspree.io/legal/privacy-policy/"
+        >
+          {{ texts.privacyPolicy }}
+        </a>
+      </p>
       <button
         type="submit"
         class="w-full border-4 border-[var(--border)] bg-[var(--accent)] px-4 py-3 font-black uppercase text-[var(--accent-text)] shadow-[4px_4px_0_var(--shadow)] disabled:cursor-wait"

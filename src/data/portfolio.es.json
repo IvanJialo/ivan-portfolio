@@ -319,7 +319,8 @@
       "subjectError": "El asunto admite hasta 200 caracteres.",
       "messageError": "Introduce un mensaje (entre 1 y 5.000 caracteres).",
       "leaveEmpty": "Deja este campo vacío",
-      "privacy": "Formspree procesará tu nombre, email y mensaje para gestionar tu consulta. No incluyas información sensible."
+      "privacy": "Tu nombre, email, asunto opcional y mensaje se enviarán a Formspree para que pueda responder a tu consulta. No incluyas información sensible.",
+      "privacyPolicy": "Política de privacidad de Formspree"
     }
   },
   "footer": {

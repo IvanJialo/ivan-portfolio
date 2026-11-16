@@ -17,12 +17,19 @@ export async function sendContact(endpoint, fields, signal) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify(
-      Object.fromEntries(Object.entries(fields).map(([key, value]) => [key, value.trim()])),
-    ),
+    // Only send fields declared by this form, never incidental UI state.
+    body: JSON.stringify({
+      name: fields.name.trim(),
+      email: fields.email.trim(),
+      subject: fields.subject.trim(),
+      message: fields.message.trim(),
+      _gotcha: fields._gotcha.trim(),
+    }),
+    credentials: 'omit',
+    referrerPolicy: 'no-referrer',
     signal,
   })
   if (!response.ok) throw new Error(response.status === 429 ? 'rateLimited' : 'sendError')
   const result = await response.json()
-  if (result.ok !== true) throw new Error('sendError')
+  if (result?.ok !== true) throw new Error('sendError')
 }
