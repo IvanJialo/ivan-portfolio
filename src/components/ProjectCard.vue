@@ -10,6 +10,10 @@ defineProps({
     type: Number,
     required: true,
   },
+  labels: {
+    type: Object,
+    required: true,
+  },
 })
 </script>
 
@@ -22,7 +26,7 @@ defineProps({
         <p
           class="mb-3 inline-block border-4 border-[var(--border)] bg-[var(--accent-2)] px-3 py-1 text-xs font-black uppercase text-[var(--accent-2-text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)]"
         >
-          Mission {{ String(index + 1).padStart(2, '0') }}
+          {{ labels.mission }} {{ String(index + 1).padStart(2, '0') }}
         </p>
         <h3 class="break-words text-xl font-black uppercase sm:text-2xl">{{ project.name }}</h3>
       </div>
@@ -35,12 +39,12 @@ defineProps({
 
     <div class="mb-5 grid gap-3 text-sm font-black uppercase sm:grid-cols-2">
       <div class="border-2 border-[var(--border)] p-3">
-        <span class="text-[var(--muted)]">Type</span>
+        <span class="text-[var(--muted)]">{{ labels.type }}</span>
         <p>{{ project.type }}</p>
       </div>
 
       <div class="border-2 border-[var(--border)] p-3">
-        <span class="text-[var(--muted)]">Category</span>
+        <span class="text-[var(--muted)]">{{ labels.category }}</span>
         <p>{{ project.category }}</p>
       </div>
     </div>
@@ -51,10 +55,11 @@ defineProps({
       <a
         :href="project.liveUrl"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         class="inline-flex max-w-full items-center justify-center border-4 border-[var(--border)] bg-[var(--accent)] px-4 py-2 text-center text-sm font-black uppercase text-[var(--accent-text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)] transition active:translate-x-1 active:translate-y-1 active:shadow-none"
       >
-        Live site
+        {{ labels.liveSite }}
+        <span class="sr-only"> ({{ labels.newTab }})</span>
       </a>
     </div>
 

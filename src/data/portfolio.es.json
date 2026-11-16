@@ -11,6 +11,14 @@
     "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Enfocado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
   },
   "navigation": {
+    "languageTitle": "Idioma",
+    "modeTitle": "Tema",
+    "themes": { "brutal": "Brutal", "neon": "Neon", "dark": "Oscuro" },
+    "systems": {
+      "brutal": "Sistema neobrutalista",
+      "neon": "Panel de seguridad Neon",
+      "dark": "Modo profesional oscuro"
+    },
     "github": "GitHub",
     "newTab": "se abre en una pestaña nueva",
     "startMission": "Iniciar misión",
@@ -96,6 +104,16 @@
     ]
   },
   "projects": {
+    "labels": {
+      "mission": "Misión",
+      "type": "Tipo",
+      "category": "Categoría",
+      "liveSite": "Ver web",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "goTo": "Ir a la misión",
+      "newTab": "se abre en una pestaña nueva"
+    },
     "title": "Misiones / Proyectos",
     "subtitle": "Laboratorios de ciberseguridad y proyectos de software que reflejan mi experiencia práctica y perfil técnico.",
     "items": [
@@ -252,6 +270,7 @@
     ]
   },
   "languages": {
+    "levelLabel": "Nivel de protocolo",
     "title": "Idiomas",
     "subtitle": "Competencias comunicativas para entornos técnicos e internacionales.",
     "items": [

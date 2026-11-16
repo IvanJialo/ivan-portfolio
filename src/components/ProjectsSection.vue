@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 
 import ProjectCard from './ProjectCard.vue'
 import ProjectPreviewCard from './ProjectPreviewCard.vue'
@@ -13,6 +13,13 @@ const props = defineProps({
 })
 
 const activeIndex = ref(0)
+const sectionElement = ref(null)
+
+async function selectPreview(index) {
+  activeIndex.value = index
+  await nextTick()
+  sectionElement.value?.querySelector('.neon-project-card')?.focus({ preventScroll: true })
+}
 
 const totalProjects = computed(() => props.section.items.length)
 
@@ -63,20 +70,25 @@ const visibleProjects = computed(() => {
 <template>
   <section
     id="projects"
+    ref="sectionElement"
+    :aria-label="section.title"
     class="mt-8 overflow-hidden border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
     <div class="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
       <SectionTitle :title="section.title" :subtitle="section.subtitle" />
 
       <div
+        role="status"
+        aria-atomic="true"
         class="border-4 border-[var(--border)] bg-[var(--surface)] px-4 py-3 font-mono text-xs font-black uppercase text-[var(--muted)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)]"
       >
-        Mission
-        <span class="text-[var(--accent-2)]">
+        {{ section.labels.mission }}
+        <span class="text-[var(--accent-2-readable)]">
           {{ String(activeIndex + 1).padStart(2, '0') }}
         </span>
         /
         {{ String(totalProjects).padStart(2, '0') }}
+        <span class="sr-only">: {{ section.items[activeIndex].name }}</span>
       </div>
     </div>
 
@@ -91,27 +103,37 @@ const visibleProjects = computed(() => {
           :key="item.project.name"
           class="transition-all duration-300"
           :class="{
-            'col-start-1 scale-[0.82] cursor-pointer opacity-55 hover:scale-[0.86] hover:opacity-85':
-              item.position === 'left',
+            'col-start-1 scale-[0.82] hover:scale-[0.86]': item.position === 'left',
             'col-start-2 scale-100 opacity-100': item.position === 'center',
-            'col-start-3 scale-[0.82] cursor-pointer opacity-55 hover:scale-[0.86] hover:opacity-85':
-              item.position === 'right',
+            'col-start-3 scale-[0.82] hover:scale-[0.86]': item.position === 'right',
           }"
-          @click="item.position !== 'center' && (activeIndex = item.index)"
         >
           <ProjectCard
             v-if="item.position === 'center'"
             :project="item.project"
             :index="item.index"
+            :labels="section.labels"
+            tabindex="-1"
           />
 
-          <ProjectPreviewCard v-else :project="item.project" :index="item.index" />
+          <ProjectPreviewCard
+            v-else
+            :project="item.project"
+            :index="item.index"
+            :labels="section.labels"
+            :aria-label="`${section.labels.goTo} ${item.index + 1}: ${item.project.name}`"
+            @click="selectPreview(item.index)"
+          />
         </div>
       </TransitionGroup>
     </div>
 
     <div class="mt-8 xl:hidden">
-      <ProjectCard :project="section.items[activeIndex]" :index="activeIndex" />
+      <ProjectCard
+        :project="section.items[activeIndex]"
+        :index="activeIndex"
+        :labels="section.labels"
+      />
     </div>
 
     <div class="mt-8 flex flex-col items-stretch justify-between gap-4 sm:flex-row sm:items-center">
@@ -121,17 +143,18 @@ const visibleProjects = computed(() => {
         :disabled="!canGoPrevious"
         @click="previousProject"
       >
-        ← Previous
+        ← {{ section.labels.previous }}
       </button>
 
-      <div class="flex justify-center gap-3">
+      <div class="flex flex-wrap justify-center gap-2">
         <button
           v-for="(_, index) in section.items"
           :key="index"
           type="button"
-          class="h-5 w-5 border-4 border-[var(--border)] shadow-[3px_3px_0_var(--shadow)] transition-all duration-150 hover:-translate-y-0.5"
+          class="h-6 w-6 shrink-0 border-4 border-[var(--border)] shadow-[3px_3px_0_var(--shadow)] transition-all duration-150 hover:-translate-y-0.5"
           :class="activeIndex === index ? 'bg-[var(--accent)]' : 'bg-[var(--surface)]'"
-          :aria-label="`Go to mission ${index + 1}`"
+          :aria-label="`${section.labels.goTo} ${index + 1}: ${section.items[index].name}`"
+          :aria-current="activeIndex === index ? 'true' : undefined"
           @click="activeIndex = index"
         />
       </div>
@@ -142,7 +165,7 @@ const visibleProjects = computed(() => {
         :disabled="!canGoNext"
         @click="nextProject"
       >
-        Next →
+        {{ section.labels.next }} →
       </button>
     </div>
   </section>

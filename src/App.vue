@@ -1,5 +1,6 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
+import { readPreference, savePreference } from './utils/preferences'
 
 import HeroSection from './components/HeroSection.vue'
 import SecurityFocus from './components/SecurityFocus.vue'
@@ -14,12 +15,14 @@ import FooterSection from './components/FooterSection.vue'
 import portfolioEn from './data/portfolio.en.json'
 import portfolioEs from './data/portfolio.es.json'
 
-const language = ref(localStorage.getItem('language') || 'en')
+const language = ref(readPreference('language', ['en', 'es'], 'en'))
 const themes = ['brutal', 'neon', 'dark']
-const savedTheme = localStorage.getItem('theme')
-const theme = ref(
-  themes.includes(savedTheme) ? savedTheme : savedTheme === 'terminal' ? 'neon' : 'brutal',
-)
+const savedTheme = readPreference('theme', [...themes, 'terminal'], 'brutal')
+const theme = ref(savedTheme === 'terminal' ? 'neon' : savedTheme)
+
+watchEffect(() => {
+  document.documentElement.lang = language.value
+})
 
 const portfolio = computed(() => {
   return language.value === 'en' ? portfolioEn : portfolioEs
@@ -29,29 +32,18 @@ const languageLabel = computed(() => {
   return `${language.value.toUpperCase()} \u2192 ${portfolio.value.navigation.language}`
 })
 
-const modeLabel = computed(() => {
-  return theme.value.charAt(0).toUpperCase() + theme.value.slice(1)
-})
-
-const systemLabel = computed(() => {
-  const labels = {
-    brutal: 'NEO-BRUTALIST SYSTEM',
-    neon: 'NEON SECURITY DASHBOARD',
-    dark: 'DARK PROFESSIONAL MODE',
-  }
-
-  return labels[theme.value]
-})
+const modeLabel = computed(() => portfolio.value.navigation.themes[theme.value])
+const systemLabel = computed(() => portfolio.value.navigation.systems[theme.value])
 
 const toggleLanguage = () => {
   language.value = language.value === 'en' ? 'es' : 'en'
-  localStorage.setItem('language', language.value)
+  savePreference('language', language.value)
 }
 
 const toggleTheme = () => {
   const currentIndex = themes.indexOf(theme.value)
   theme.value = themes[(currentIndex + 1) % themes.length]
-  localStorage.setItem('theme', theme.value)
+  savePreference('theme', theme.value)
 }
 </script>
 
@@ -86,7 +78,7 @@ const toggleTheme = () => {
             type="button"
             @click="toggleLanguage"
           >
-            Lang: {{ languageLabel }}
+            {{ portfolio.navigation.languageTitle }}: {{ languageLabel }}
           </button>
 
           <button
@@ -94,7 +86,7 @@ const toggleTheme = () => {
             type="button"
             @click="toggleTheme"
           >
-            Mode: {{ modeLabel }}
+            {{ portfolio.navigation.modeTitle }}: {{ modeLabel }}
           </button>
         </div>
       </header>

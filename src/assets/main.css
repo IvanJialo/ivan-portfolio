@@ -17,19 +17,17 @@ html {
   --accent-2: #ff00ff;
   --accent-3: #ffa500;
   --accent-4: #00d9ff;
-  --accent-readable: var(--accent);
-  --accent-2-readable: var(--accent-2);
-  --accent-4-readable: var(--accent-4);
+  --accent-readable: #007500;
+  --accent-2-readable: #a000a0;
+  --accent-4-readable: #006575;
   --accent-text: #111111;
-  --accent-2-text: #ffffff;
+  --accent-2-text: #111111;
   --accent-3-text: #111111;
   --accent-4-text: #111111;
   --inverse-text: #ffffff;
-  --focus: #ff00ff;
+  --focus: #a000a0;
   --glow: rgb(0 0 0 / 0);
-  --accent-outline:
-    -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000,
-    2px 2px 0 #000000;
+  --accent-outline: none;
 }
 
 [data-theme='neon'] {
@@ -49,15 +47,14 @@ html {
   --accent-2-readable: #ff4fb1;
   --accent-4-readable: #6bf2ff;
   --accent-text: #111111;
-  --accent-2-text: #ffffff;
+  --accent-2-text: #111111;
   --accent-3-text: #111111;
   --accent-4-text: #061014;
   --inverse-text: #ffffff;
   --focus: #b6ff00;
   --glow: rgb(32 230 255 / 0.42);
   --accent-outline:
-    0 0 8px rgb(255 20 147 / 0.78), 0 0 18px rgb(32 230 255 / 0.5),
-    1px 1px 0 #000000;
+    0 0 8px rgb(255 20 147 / 0.78), 0 0 18px rgb(32 230 255 / 0.5), 1px 1px 0 #000000;
 }
 
 [data-theme='dark'] {
@@ -147,7 +144,7 @@ a:focus-visible {
   }
 
   50% {
-    opacity: 0.45;
+    opacity: 0.75;
   }
 }
 
@@ -163,4 +160,17 @@ a:focus-visible {
 
 .animate-progress-fill {
   animation: progress-fill 900ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
