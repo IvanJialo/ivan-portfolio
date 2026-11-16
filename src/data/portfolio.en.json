@@ -6,10 +6,13 @@
     "background": "Software Development Background",
     "location": "Alicante, Spain",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "github": "https://github.com/IvanJialo",
     "status": "Available for cybersecurity roles",
     "summary": "Junior Cybersecurity Analyst with a software development background and specialized training in cybersecurity. Focused on network security, threat detection, incident response, and offensive security."
   },
   "navigation": {
+    "github": "GitHub",
+    "newTab": "opens in a new tab",
     "startMission": "Start mission",
     "downloadCv": "Download CV",
     "projects": "Projects",
@@ -289,6 +292,7 @@
     "subtitle": "Open to junior cybersecurity and SOC opportunities, especially in security monitoring, threat detection and incident response.",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {
+      "newTab": "opens in a new tab",
       "linkedin": "LinkedIn",
       "cvEnglish": "Download CV EN",
       "cvSpanish": "Download CV ES"

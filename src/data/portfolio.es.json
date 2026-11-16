@@ -6,10 +6,13 @@
     "background": "Base en Desarrollo de Software",
     "location": "Alicante, España",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
+    "github": "https://github.com/IvanJialo",
     "status": "Disponible para puestos de ciberseguridad",
     "summary": "Analista Junior de Ciberseguridad con base en desarrollo de software y formación especializada en ciberseguridad. Enfocado en seguridad de redes, detección de amenazas, respuesta ante incidentes y seguridad ofensiva."
   },
   "navigation": {
+    "github": "GitHub",
+    "newTab": "se abre en una pestaña nueva",
     "startMission": "Iniciar misión",
     "downloadCv": "Descargar CV",
     "projects": "Proyectos",
@@ -287,6 +290,7 @@
     "subtitle": "Disponible para oportunidades junior en ciberseguridad y SOC, especialmente en monitorización de seguridad, detección de amenazas y respuesta ante incidentes.",
     "linkedin": "https://www.linkedin.com/in/ivanjimenezalonso",
     "actions": {
+      "newTab": "se abre en una pestaña nueva",
       "linkedin": "LinkedIn",
       "cvEnglish": "Descargar CV EN",
       "cvSpanish": "Descargar CV ES"

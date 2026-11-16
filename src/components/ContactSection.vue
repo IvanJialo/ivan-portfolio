@@ -45,7 +45,11 @@ const getPublicPath = (path) => {
         <ContactForm :texts="section.form" />
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-          <BrutalButton :href="section.linkedin" variant="secondary">
+          <BrutalButton
+            :href="section.linkedin"
+            :new-tab-label="section.actions.newTab"
+            variant="secondary"
+          >
             {{ section.actions.linkedin }}
           </BrutalButton>
         </div>
@@ -61,11 +65,21 @@ const getPublicPath = (path) => {
         </p>
 
         <div class="flex flex-col gap-4">
-          <BrutalButton :href="getPublicPath(section.cv.english)" variant="dark">
+          <BrutalButton
+            :href="getPublicPath(section.cv.english)"
+            download
+            hreflang="en"
+            variant="dark"
+          >
             {{ section.actions.cvEnglish }}
           </BrutalButton>
 
-          <BrutalButton :href="getPublicPath(section.cv.spanish)" variant="dark">
+          <BrutalButton
+            :href="getPublicPath(section.cv.spanish)"
+            download
+            hreflang="es"
+            variant="dark"
+          >
             {{ section.actions.cvSpanish }}
           </BrutalButton>
         </div>

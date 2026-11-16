@@ -45,8 +45,20 @@ defineProps({
           {{ portfolio.navigation.startMission }}
         </BrutalButton>
 
-        <BrutalButton :href="portfolio.profile.linkedin" variant="secondary">
+        <BrutalButton
+          :href="portfolio.profile.linkedin"
+          :new-tab-label="portfolio.navigation.newTab"
+          variant="secondary"
+        >
           LinkedIn
+        </BrutalButton>
+
+        <BrutalButton
+          :href="portfolio.profile.github"
+          :new-tab-label="portfolio.navigation.newTab"
+          variant="secondary"
+        >
+          {{ portfolio.navigation.github }}
         </BrutalButton>
 
         <BrutalButton href="#contact" variant="dark">
