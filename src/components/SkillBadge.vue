@@ -51,6 +51,7 @@ const badgeTitle = computed(() => {
 <template>
   <span
     class="relative inline-flex max-w-full flex-col items-start"
+    :class="{ 'z-50': open }"
     @mouseenter="open = Boolean(badgeTitle)"
     @mouseleave="!pinned && (open = false)"
     @keydown.esc.stop="close"
@@ -76,18 +77,39 @@ const badgeTitle = computed(() => {
       </span>
     </component>
 
-    <span
-      v-if="badgeTitle"
-      v-show="open"
-      :id="tooltipId"
-      role="tooltip"
-      class="z-50 mt-2 w-max max-w-[min(18rem,calc(100vw-5rem))] sm:absolute sm:bottom-full sm:left-0 sm:mt-0 sm:pb-3"
-    >
+    <Transition name="badge-tooltip">
       <span
-        class="block whitespace-normal border-4 border-[var(--border)] bg-[var(--surface-alt)] px-3 py-2 text-center text-xs font-bold leading-tight text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)]"
+        v-if="badgeTitle"
+        v-show="open"
+        :id="tooltipId"
+        role="tooltip"
+        class="z-50 mt-3 w-max max-w-[min(18rem,calc(100vw-5rem))] max-sm:max-w-full sm:absolute sm:bottom-full sm:left-0 sm:mt-0 sm:pb-4"
       >
-        {{ badgeTitle }}
+        <span
+          class="tooltip-sticker relative block rotate-[-2deg] whitespace-normal border-4 border-[var(--border)] bg-[var(--surface-alt)] px-4 py-3 text-left text-xs font-black uppercase leading-relaxed tracking-wide text-[var(--text)] shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)]"
+        >
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute -top-2.5 left-4 h-3 w-9 rotate-[-7deg] border-2 border-[var(--border)] bg-[var(--accent-3)]"
+          />
+          {{ badgeTitle }}
+        </span>
       </span>
-    </span>
+    </Transition>
   </span>
 </template>
+
+<style scoped>
+.badge-tooltip-enter-active,
+.badge-tooltip-leave-active {
+  transition:
+    opacity 140ms ease-out,
+    transform 140ms ease-out;
+}
+
+.badge-tooltip-enter-from,
+.badge-tooltip-leave-to {
+  opacity: 0;
+  transform: translateY(5px);
+}
+</style>
