@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import ContactForm from './ContactForm.vue'
 
 import BrutalButton from './BrutalButton.vue'
 import SectionTitle from './SectionTitle.vue'
@@ -11,27 +11,13 @@ defineProps({
   },
 })
 
-const copied = ref(false)
-
 const getPublicPath = (path) => {
   return `${import.meta.env.BASE_URL}${path}`
-}
-
-const copyEmail = async (email) => {
-  try {
-    await navigator.clipboard.writeText(email)
-    copied.value = true
-
-    setTimeout(() => {
-      copied.value = false
-    }, 1800)
-  } catch {
-    copied.value = false
-  }
 }
 </script>
 <template>
   <section
+    id="contact"
     class="mt-8 border-4 border-[var(--border)] bg-[var(--surface-alt)] p-4 shadow-[5px_5px_0_var(--shadow),0_0_16px_var(--glow)] sm:p-6 sm:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
     <SectionTitle :title="section.title" :subtitle="section.subtitle" />
@@ -43,7 +29,7 @@ const copyEmail = async (email) => {
         <p
           class="mb-4 inline-block border-4 border-[var(--border)] bg-[var(--accent)] px-3 py-1 text-xs font-black uppercase text-[var(--accent-text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)]"
         >
-          Open to work
+          {{ section.availability }}
         </p>
 
         <h3 class="break-words text-2xl font-black uppercase sm:text-3xl md:text-4xl">
@@ -56,20 +42,14 @@ const copyEmail = async (email) => {
           {{ section.subtitle }}
         </p>
 
+        <ContactForm :texts="section.form" />
+
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-          <BrutalButton :href="`mailto:${section.email}`" variant="primary">
-            {{ section.actions.email }}
-          </BrutalButton>
-
-          <button
-            type="button"
-            class="inline-flex w-full max-w-full items-center justify-center border-4 border-[var(--border)] bg-[var(--surface-alt)] px-6 py-3 text-center font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none sm:w-44"
-            @click="copyEmail(section.email)"
+          <BrutalButton
+            :href="section.linkedin"
+            :new-tab-label="section.actions.newTab"
+            variant="secondary"
           >
-            {{ copied ? section.actions.copied : section.actions.copyEmail }}
-          </button>
-
-          <BrutalButton :href="section.linkedin" variant="secondary">
             {{ section.actions.linkedin }}
           </BrutalButton>
         </div>
@@ -81,15 +61,25 @@ const copyEmail = async (email) => {
         <p
           class="mb-5 break-words border-4 border-[var(--border)] bg-[var(--accent-3)] px-3 py-2 font-black uppercase text-[var(--accent-3-text)]"
         >
-          CV Downloads
+          {{ section.cvTitle }}
         </p>
 
         <div class="flex flex-col gap-4">
-          <BrutalButton :href="getPublicPath(section.cv.english)" variant="dark">
+          <BrutalButton
+            :href="getPublicPath(section.cv.english)"
+            download
+            hreflang="en"
+            variant="dark"
+          >
             {{ section.actions.cvEnglish }}
           </BrutalButton>
 
-          <BrutalButton :href="getPublicPath(section.cv.spanish)" variant="dark">
+          <BrutalButton
+            :href="getPublicPath(section.cv.spanish)"
+            download
+            hreflang="es"
+            variant="dark"
+          >
             {{ section.actions.cvSpanish }}
           </BrutalButton>
         </div>
@@ -98,9 +88,9 @@ const copyEmail = async (email) => {
           class="mt-6 break-words border-4 border-[var(--border)] bg-[var(--surface-strong)] p-4 font-mono text-xs font-bold uppercase leading-relaxed text-[var(--accent)]"
         >
           <p>&gt; contact --status</p>
-          <p>Available</p>
+          <p>{{ section.available }}</p>
           <p class="mt-3">&gt; response_time</p>
-          <p>Usually fast</p>
+          <p>{{ section.responseTime }}</p>
         </div>
       </aside>
     </div>

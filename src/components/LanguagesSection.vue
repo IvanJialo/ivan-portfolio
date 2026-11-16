@@ -41,7 +41,7 @@ defineProps({
         </div>
 
         <p class="mt-3 font-mono text-xs font-black uppercase text-[var(--muted)]">
-          Protocol level: {{ language.progress }}%
+          {{ section.levelLabel }}: {{ language.progress }}%
         </p>
       </article>
     </div>
