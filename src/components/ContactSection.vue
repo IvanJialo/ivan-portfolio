@@ -42,6 +42,10 @@ const getPublicPath = (path) => {
           {{ section.subtitle }}
         </p>
 
+        <p class="mt-3 text-sm font-semibold text-[var(--muted)]">
+          {{ section.relocation }}
+        </p>
+
         <ContactForm :texts="section.form" />
 
         <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">

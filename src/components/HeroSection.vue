@@ -1,5 +1,6 @@
 <script setup>
 import BrutalButton from './BrutalButton.vue'
+import SkillBadge from './SkillBadge.vue'
 import StatusPanel from './StatusPanel.vue'
 
 defineProps({
@@ -18,6 +19,24 @@ defineProps({
       >
         {{ portfolio.profile.status }}
       </p>
+      <div class="mb-5 max-w-full sm:mb-6">
+        <SkillBadge>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="mr-2 inline-block h-4 w-4 align-middle"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <ellipse cx="12" cy="12" rx="4" ry="9" />
+            <path d="M3 12h18" />
+          </svg>
+          {{ portfolio.profile.relocation }}
+        </SkillBadge>
+      </div>
 
       <h1
         class="max-w-4xl break-words text-[clamp(2.6rem,14vw,4.5rem)] font-black uppercase leading-none text-[var(--text)] md:text-7xl"
