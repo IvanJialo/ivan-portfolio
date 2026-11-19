@@ -18,7 +18,7 @@ defineProps({
 <template>
   <button
     type="button"
-    class="neon-project-preview block h-full min-h-[340px] w-full overflow-hidden border-4 border-[var(--border)] bg-[var(--surface)] p-4 text-left shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] transition-all duration-300"
+    class="neon-project-preview block h-full min-h-[340px] w-full overflow-hidden border-4 border-[var(--border)] bg-[var(--surface)] p-4 text-left shadow-[5px_5px_0_var(--shadow),0_0_14px_var(--glow)] transition-[translate,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-1 hover:shadow-[8px_8px_0_var(--shadow),0_0_22px_var(--glow)]"
   >
     <span class="mb-5 flex flex-col items-start justify-between gap-3">
       <span

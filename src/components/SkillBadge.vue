@@ -58,11 +58,12 @@ const badgeTitle = computed(() => {
   >
     <component
       :is="badgeTitle ? 'button' : 'span'"
+      :class="badgeTitle ? 'cursor-pointer' : 'cursor-default'"
       :type="badgeTitle ? 'button' : undefined"
       :aria-expanded="badgeTitle ? open : undefined"
       :aria-controls="badgeTitle ? tooltipId : undefined"
       :aria-describedby="badgeTitle ? tooltipId : undefined"
-      class="inline-flex max-w-full items-center gap-2 border-4 border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-left text-xs font-black uppercase text-[var(--text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)] transition-transform hover:-translate-y-0.5 focus-visible:-translate-y-0.5 sm:text-sm"
+      class="inline-flex max-w-full items-center gap-2 border-4 border-[var(--border)] bg-[var(--surface)] px-3 py-2 text-left text-xs font-black uppercase text-[var(--text)] shadow-[3px_3px_0_var(--shadow),0_0_10px_var(--glow)] transition-[translate] duration-150 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:focus-visible:-translate-y-0.5 sm:text-sm"
       @click="badgeTitle && toggle()"
       @focus="open = Boolean(badgeTitle)"
       @blur="close"
@@ -111,5 +112,12 @@ const badgeTitle = computed(() => {
 .badge-tooltip-leave-to {
   opacity: 0;
   transform: translateY(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-tooltip-enter-from,
+  .badge-tooltip-leave-to {
+    transform: none;
+  }
 }
 </style>

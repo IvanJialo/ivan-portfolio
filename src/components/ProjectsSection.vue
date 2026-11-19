@@ -103,9 +103,9 @@ const visibleProjects = computed(() => {
           :key="item.project.name"
           class="transition-all duration-300"
           :class="{
-            'col-start-1 scale-[0.82] hover:scale-[0.86]': item.position === 'left',
+            'col-start-1 scale-[0.82] motion-safe:hover:scale-[0.86]': item.position === 'left',
             'col-start-2 scale-100 opacity-100': item.position === 'center',
-            'col-start-3 scale-[0.82] hover:scale-[0.86]': item.position === 'right',
+            'col-start-3 scale-[0.82] motion-safe:hover:scale-[0.86]': item.position === 'right',
           }"
         >
           <ProjectCard
@@ -139,7 +139,7 @@ const visibleProjects = computed(() => {
     <div class="mt-8 flex flex-col items-stretch justify-between gap-4 sm:flex-row sm:items-center">
       <button
         type="button"
-        class="border-4 border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+        class="border-4 border-[var(--border)] bg-[var(--surface)] px-6 py-3 font-black uppercase text-[var(--text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-x-1 motion-safe:active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
         :disabled="!canGoPrevious"
         @click="previousProject"
       >
@@ -151,7 +151,7 @@ const visibleProjects = computed(() => {
           v-for="(_, index) in section.items"
           :key="index"
           type="button"
-          class="h-6 w-6 shrink-0 border-4 border-[var(--border)] shadow-[3px_3px_0_var(--shadow)] transition-all duration-150 hover:-translate-y-0.5"
+          class="h-6 w-6 shrink-0 border-4 border-[var(--border)] shadow-[3px_3px_0_var(--shadow)] transition-all duration-150 motion-safe:hover:-translate-y-0.5"
           :class="activeIndex === index ? 'bg-[var(--accent)]' : 'bg-[var(--surface)]'"
           :aria-label="`${section.labels.goTo} ${index + 1}: ${section.items[index].name}`"
           :aria-current="activeIndex === index ? 'true' : undefined"
@@ -161,7 +161,7 @@ const visibleProjects = computed(() => {
 
       <button
         type="button"
-        class="border-4 border-[var(--border)] bg-[var(--accent)] px-6 py-3 font-black uppercase text-[var(--accent-text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
+        class="border-4 border-[var(--border)] bg-[var(--accent)] px-6 py-3 font-black uppercase text-[var(--accent-text)] shadow-[4px_4px_0_var(--shadow),0_0_10px_var(--glow)] transition-all duration-150 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-x-1 motion-safe:active:translate-y-1 active:shadow-none disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
         :disabled="!canGoNext"
         @click="nextProject"
       >
@@ -193,5 +193,11 @@ const visibleProjects = computed(() => {
 
 .mission-slide-leave-active {
   position: absolute;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mission-slide-enter-from,
+  .mission-slide-leave-to {
+    transform: none;
+  }
 }
 </style>

@@ -128,13 +128,15 @@ a:focus-visible {
     inset 0 0 16px rgb(255 20 147 / 0.1);
 }
 
-[data-theme='neon'] .neon-project-card:hover,
-[data-theme='neon'] .neon-project-preview:hover {
-  box-shadow:
-    8px 8px 0 var(--shadow),
-    0 0 28px rgb(255 20 147 / 0.42),
-    0 0 64px rgb(32 230 255 / 0.36),
-    inset 0 0 24px rgb(255 20 147 / 0.16);
+@media (hover: hover) and (pointer: fine) {
+  [data-theme='neon'] .neon-project-card:hover,
+  [data-theme='neon'] .neon-project-preview:hover {
+    box-shadow:
+      8px 8px 0 var(--shadow),
+      0 0 28px rgb(255 20 147 / 0.42),
+      0 0 64px rgb(32 230 255 / 0.36),
+      inset 0 0 24px rgb(255 20 147 / 0.16);
+  }
 }
 
 @keyframes blink-soft {

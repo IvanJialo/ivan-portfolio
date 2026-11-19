@@ -19,7 +19,7 @@ const props = defineProps({
 const isExternal = computed(() => /^https?:\/\//i.test(props.href || ''))
 
 const baseClasses =
-  'inline-flex min-w-0 items-center justify-center border-4 px-4 py-3 text-center text-sm font-black uppercase shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)] transition active:translate-x-1 active:translate-y-1 active:shadow-none cursor-pointer sm:px-6 sm:text-base'
+  'inline-flex min-w-0 items-center justify-center border-4 px-4 py-3 text-center text-sm font-black uppercase shadow-[4px_4px_0_var(--shadow),0_0_12px_var(--glow)] transition-[translate,box-shadow] duration-150 ease-out motion-safe:hover:-translate-y-0.5 hover:shadow-[5px_6px_0_var(--shadow),0_0_14px_var(--glow)] motion-safe:active:translate-x-1 motion-safe:active:translate-y-1 active:shadow-none cursor-pointer sm:px-6 sm:text-base'
 
 const variantClasses = {
   primary: 'border-[var(--border)] bg-[var(--accent)] text-[var(--accent-text)]',
